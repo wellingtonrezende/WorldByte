@@ -1,0 +1,982 @@
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+:root {
+
+    --bg-dark: #050816;
+    --bg-section: #081225;
+
+    --blue: #00aaff;
+    --blue-light: #00eaff;
+
+    --text: #ffffff;
+    --text-gray: #aab6c8;
+
+    --card: rgba(255,255,255,0.05);
+
+    --border: rgba(0,174,255,0.3);
+
+}
+
+
+
+body {
+
+    background: var(--bg-dark);
+    color: var(--text);
+
+    font-family: 'Poppins', sans-serif;
+
+    overflow-x: hidden;
+
+}
+
+
+
+h1,h2,h3 {
+
+    font-family: 'Orbitron', sans-serif;
+
+}
+
+
+
+a {
+
+    text-decoration:none;
+    color:white;
+
+}
+
+
+
+.container {
+
+    width:90%;
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+
+
+
+
+/* =====================================
+ HEADER
+===================================== */
+
+
+.header {
+
+    position:fixed;
+
+    top:0;
+    width:100%;
+
+    z-index:1000;
+
+    background:rgba(5,8,22,.8);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+
+
+.header .container {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    height:80px;
+
+}
+
+
+
+.logo {
+
+    font-size:30px;
+
+    font-weight:700;
+
+    font-family:'Orbitron';
+
+    color:white;
+
+}
+
+
+.logo span {
+
+    color:var(--blue-light);
+
+    text-shadow:0 0 20px var(--blue);
+
+}
+
+
+
+
+.navbar {
+
+    display:flex;
+
+    gap:30px;
+
+}
+
+
+
+.navbar a {
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+
+
+.navbar a:hover {
+
+    color:var(--blue-light);
+
+}
+
+
+
+.menu-mobile {
+
+    display:none;
+
+    background:none;
+
+    border:0;
+
+    color:white;
+
+    font-size:25px;
+
+}
+
+
+
+
+
+
+/* =====================================
+ HERO
+===================================== */
+
+
+.hero {
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+
+.hero::before {
+
+    content:"";
+
+    position:absolute;
+
+    width:600px;
+
+    height:600px;
+
+    background:var(--blue);
+
+    filter:blur(180px);
+
+    opacity:.25;
+
+    right:-200px;
+
+    top:100px;
+
+}
+
+
+
+
+.hero-content {
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:40px;
+
+}
+
+
+
+.hero-text {
+
+    max-width:600px;
+
+}
+
+
+
+.hero h1 {
+
+    font-size:55px;
+
+    line-height:1.2;
+
+}
+
+
+
+.hero h1 span {
+
+    color:var(--blue-light);
+
+    display:block;
+
+}
+
+
+
+.hero p {
+
+    margin:25px 0;
+
+    color:var(--text-gray);
+
+    font-size:18px;
+
+}
+
+
+
+
+
+.hero-buttons {
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+
+
+
+.btn,
+.btn-whatsapp {
+
+    padding:14px 30px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+
+.btn {
+
+    background:linear-gradient(
+        90deg,
+        var(--blue),
+        var(--blue-light)
+    );
+
+}
+
+
+
+.btn:hover {
+
+    box-shadow:0 0 25px var(--blue);
+
+}
+
+
+
+.btn-whatsapp {
+
+    border:1px solid #25d366;
+
+}
+
+
+
+.btn-whatsapp:hover {
+
+    background:#25d366;
+
+}
+
+
+
+
+
+.hero-image {
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+
+
+.tech-circle {
+
+    width:350px;
+
+    height:350px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(0,170,255,.3),
+        transparent 70%
+    );
+
+
+    border:2px solid var(--blue);
+
+    box-shadow:
+    0 0 50px var(--blue);
+
+}
+
+
+
+.tech-circle i {
+
+    font-size:120px;
+
+    color:var(--blue-light);
+
+}
+
+
+
+
+
+
+/* =====================================
+ SEÇÕES
+===================================== */
+
+
+section {
+
+    padding:100px 0;
+
+}
+
+
+
+section h2 {
+
+    text-align:center;
+
+    font-size:40px;
+
+    margin-bottom:50px;
+
+}
+
+
+
+section h2 span {
+
+    color:var(--blue-light);
+
+}
+
+
+
+
+
+/* =====================================
+ SOBRE
+===================================== */
+
+
+.sobre p {
+
+    text-align:center;
+
+    color:var(--text-gray);
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+
+
+
+.mission {
+
+    margin-top:50px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+
+
+.box {
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    padding:35px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+}
+
+
+
+.box i {
+
+    font-size:45px;
+
+    color:var(--blue-light);
+
+    margin-bottom:20px;
+
+}
+
+
+
+.box p {
+
+    margin-top:15px;
+
+}
+
+
+
+
+
+/* =====================================
+ SERVIÇOS
+===================================== */
+
+
+.servicos {
+
+    background:var(--bg-section);
+
+}
+
+
+
+.cards {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+
+
+.card {
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    padding:35px;
+
+    border-radius:20px;
+
+    transition:.4s;
+
+}
+
+
+
+.card:hover {
+
+    transform:translateY(-10px);
+
+    box-shadow:0 0 30px rgba(0,170,255,.3);
+
+}
+
+
+
+.card i {
+
+    font-size:45px;
+
+    color:var(--blue-light);
+
+}
+
+
+
+.card h3 {
+
+    margin:20px 0;
+
+}
+
+
+
+.card p {
+
+    color:var(--text-gray);
+
+}
+
+
+
+
+
+
+/* =====================================
+ TECNOLOGIAS
+===================================== */
+
+
+.tech-list {
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
+
+
+
+.tech-list div {
+
+    padding:15px 30px;
+
+    border:1px solid var(--border);
+
+    border-radius:30px;
+
+    background:var(--card);
+
+}
+
+
+
+
+
+
+/* =====================================
+ PORTFÓLIO
+===================================== */
+
+
+.projects {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+
+
+.project {
+
+    height:200px;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+    145deg,
+    rgba(0,170,255,.2),
+    rgba(255,255,255,.03)
+    );
+
+
+    border:1px solid var(--border);
+
+}
+
+
+
+
+
+
+
+/* =====================================
+ CONTATO
+===================================== */
+
+
+.formulario {
+
+    max-width:600px;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+
+
+.formulario input,
+.formulario textarea {
+
+
+    background:#0b1528;
+
+    border:1px solid var(--border);
+
+    padding:15px;
+
+    border-radius:10px;
+
+    color:white;
+
+}
+
+
+
+.formulario textarea {
+
+    height:150px;
+
+}
+
+
+
+.formulario button {
+
+
+    padding:15px;
+
+    border:0;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+    90deg,
+    var(--blue),
+    var(--blue-light)
+    );
+
+
+    color:white;
+
+    font-weight:bold;
+
+}
+
+
+
+
+
+/* =====================================
+ WHATSAPP
+===================================== */
+
+
+.whatsapp-float {
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    background:#25d366;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:30px;
+
+    z-index:900;
+
+    box-shadow:0 0 25px #25d366;
+
+}
+
+
+
+
+
+
+/* =====================================
+ FOOTER
+===================================== */
+
+
+footer {
+
+    padding:30px 0;
+
+    background:#03050d;
+
+    text-align:center;
+
+}
+
+
+
+footer p {
+
+    color:var(--text-gray);
+
+}
+
+
+
+.social {
+
+    margin-top:20px;
+
+}
+
+
+
+.social a {
+
+    font-size:25px;
+
+    margin:0 10px;
+
+}
+
+
+
+
+
+
+/* =====================================
+ RESPONSIVIDADE
+===================================== */
+
+
+
+@media(max-width:900px){
+
+
+.navbar {
+
+    position:absolute;
+
+    top:80px;
+
+    left:0;
+
+    width:100%;
+
+    background:#050816;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    padding:30px;
+
+    display:none;
+
+}
+
+
+
+.navbar.active {
+
+    display:flex;
+
+}
+
+
+
+.menu-mobile {
+
+    display:block;
+
+}
+
+
+
+.hero-content {
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding-top:100px;
+
+}
+
+
+
+.hero h1 {
+
+    font-size:38px;
+
+}
+
+
+
+.tech-circle {
+
+    width:250px;
+
+    height:250px;
+
+}
+
+
+
+.tech-circle i {
+
+    font-size:80px;
+
+}
+
+
+
+.mission,
+.cards,
+.projects {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+section h2 {
+
+    font-size:32px;
+
+}
+
+
+
+.hero-buttons {
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+}
+
+
+
+
+
+@media(max-width:480px){
+
+
+.logo {
+
+    font-size:24px;
+
+}
+
+
+
+.hero p {
+
+    font-size:15px;
+
+}
+
+
+
+.btn,
+.btn-whatsapp {
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+
+}
+
+
+
