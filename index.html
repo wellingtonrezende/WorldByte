@@ -5,6 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <title>WorldByte Tecnologia | Desenvolvimento de Sites, Apps e Sistemas</title>
 
@@ -21,7 +23,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -418,23 +420,17 @@ Entre em <span>Contato</span>
 
 
 
-<form class="formulario">
+<form class="formulario" action="enviar.php" method="POST">
 
+    <input type="text" name="nome" placeholder="Nome" required>
 
-<input type="text" placeholder="Nome">
+    <input type="email" name="email" placeholder="E-mail" required>
 
-<input type="email" placeholder="E-mail">
+    <input type="tel" name="telefone" placeholder="Telefone" required>
 
-<input type="tel" placeholder="Telefone">
+    <textarea name="mensagem" placeholder="Mensagem" required></textarea>
 
-
-<textarea placeholder="Mensagem"></textarea>
-
-
-<button type="submit">
-Enviar Mensagem
-</button>
-
+    <button type="submit">Enviar Mensagem</button>
 
 </form>
 
