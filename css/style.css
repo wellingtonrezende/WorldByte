@@ -1162,3 +1162,13 @@ section h2 {
     }
 
 }
+
+.card-link{
+    text-decoration:none;
+    color:inherit;
+    display:block;
+}
+
+.card-link:hover{
+    color:inherit;
+}
