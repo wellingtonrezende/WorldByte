@@ -1,0 +1,3694 @@
+/* ==========================================================
+   WORLDBYTE TECNOLOGIA
+   sistemas.css
+
+   PARTE 1 - GERAL + HERO
+========================================================== */
+
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#050b16;
+
+    color:#ffffff;
+
+    overflow-x:hidden;
+
+}
+
+
+
+:root{
+
+    --blue:#00bfff;
+
+    --blue-light:#00cfff;
+
+    --blue-dark:#006eff;
+
+    --dark:#050b16;
+
+    --dark-two:#07101d;
+
+    --card:rgba(255,255,255,.04);
+
+    --border:rgba(0,191,255,.18);
+
+    --gray:#c7d3df;
+
+}
+
+
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
+
+
+.container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+
+
+/* ==========================================================
+   LINKS
+========================================================== */
+
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+
+/* ==========================================================
+   HEADER SUPORTE
+========================================================== */
+
+
+.header {
+
+    position:fixed;
+
+    top:0;
+    width:100%;
+
+    z-index:1000;
+
+    background:rgba(5,8,22,.8);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+
+
+.header .container {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    height:80px;
+
+}
+
+
+
+.logo {
+
+    font-size:30px;
+
+    font-weight:700;
+
+    font-family:'Orbitron';
+
+    color:white;
+
+}
+
+
+.logo span {
+
+    color:var(--blue-light);
+
+    text-shadow:0 0 20px var(--blue);
+
+}
+
+
+
+
+.navbar {
+
+    display:flex;
+
+    gap:30px;
+
+}
+
+
+
+.navbar a {
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+
+
+.navbar a:hover {
+
+    color:var(--blue-light);
+
+}
+
+
+
+.menu-mobile {
+
+    display:none;
+
+    background:none;
+
+    border:0;
+
+    color:white;
+
+    font-size:25px;
+
+}
+
+
+
+
+
+/* ==========================================================
+   HERO SISTEMAS PERSONALIZADOS
+========================================================== */
+
+
+.hero-service{
+
+    padding:170px 0 120px;
+
+
+    background:
+
+
+    radial-gradient(
+        circle at top right,
+        #00bfff25 0%,
+        transparent 45%
+    ),
+
+
+    radial-gradient(
+        circle at bottom left,
+        #006eff20 0%,
+        transparent 45%
+    ),
+
+
+    linear-gradient(
+        135deg,
+        #050b16,
+        #081525,
+        #0b1d33
+    );
+
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+
+/* brilho superior */
+
+
+.hero-service::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:550px;
+
+    height:550px;
+
+
+    background:#00bfff20;
+
+
+    border-radius:50%;
+
+
+    filter:blur(130px);
+
+
+    top:-250px;
+
+
+    right:-200px;
+
+
+}
+
+
+
+/* brilho inferior */
+
+
+.hero-service::after{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:450px;
+
+    height:450px;
+
+
+    background:#006eff15;
+
+
+    border-radius:50%;
+
+
+    filter:blur(120px);
+
+
+    bottom:-200px;
+
+
+    left:-180px;
+
+
+}
+
+
+
+
+
+/* ==========================================================
+   GRID HERO
+========================================================== */
+
+
+.hero-grid{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    1fr 1fr;
+
+
+    align-items:center;
+
+
+    gap:70px;
+
+
+    position:relative;
+
+
+    z-index:2;
+
+
+}
+
+
+
+
+
+
+/* ==========================================================
+   TEXTO HERO
+========================================================== */
+
+
+.hero-text .tag{
+
+
+    display:inline-block;
+
+
+    padding:8px 20px;
+
+
+    border-radius:30px;
+
+
+    border:1px solid rgba(0,191,255,.35);
+
+
+    background:rgba(0,191,255,.08);
+
+
+    color:#53c8ff;
+
+
+    font-size:.9rem;
+
+
+    margin-bottom:25px;
+
+
+    letter-spacing:.5px;
+
+
+}
+
+
+
+
+.hero-text h1{
+
+
+    font-family:'Orbitron',sans-serif;
+
+
+    font-size:3.6rem;
+
+
+    line-height:1.2;
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+.hero-text h1 span{
+
+
+    display:block;
+
+
+    color:#00cfff;
+
+
+    text-shadow:
+
+
+    0 0 20px rgba(0,191,255,.45);
+
+
+}
+
+
+
+
+
+.hero-text p{
+
+
+    color:#c7d3df;
+
+
+    font-size:1.1rem;
+
+
+    line-height:1.9;
+
+
+    max-width:580px;
+
+
+    margin-bottom:40px;
+
+
+}
+
+
+
+
+
+/* ==========================================================
+   BOTÕES HERO
+========================================================== */
+
+
+.hero-buttons{
+
+
+    display:flex;
+
+
+    gap:18px;
+
+
+    flex-wrap:wrap;
+
+
+}
+
+
+
+
+.hero-buttons .btn{
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #00cfff,
+        #007bff
+    );
+
+
+    padding:16px 35px;
+
+
+    border-radius:50px;
+
+
+    color:#fff;
+
+
+    font-weight:600;
+
+
+    transition:.35s;
+
+
+    box-shadow:
+
+
+    0 12px 30px rgba(0,191,255,.35);
+
+
+}
+
+
+
+
+
+.hero-buttons .btn:hover{
+
+
+    transform:translateY(-6px);
+
+
+    box-shadow:
+
+
+    0 20px 45px rgba(0,191,255,.45);
+
+
+}
+
+
+
+
+
+
+
+.hero-buttons .btn-whatsapp{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:10px;
+
+
+    padding:15px 30px;
+
+
+    border-radius:50px;
+
+
+    border:2px solid #25D366;
+
+
+    color:#25D366;
+
+
+    transition:.35s;
+
+
+}
+
+
+
+
+
+.hero-buttons .btn-whatsapp:hover{
+
+
+    background:#25D366;
+
+
+    color:white;
+
+
+    transform:translateY(-6px);
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================================
+   HERO ÍCONE TECNOLÓGICO
+========================================================== */
+
+
+.hero-image{
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+}
+
+
+
+
+
+.hero-icon{
+
+
+    width:330px;
+
+
+    height:330px;
+
+
+    border-radius:50%;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    background:
+
+
+    rgba(255,255,255,.03);
+
+
+    border:
+
+
+    2px solid rgba(0,191,255,.25);
+
+
+    backdrop-filter:blur(15px);
+
+
+    position:relative;
+
+
+    animation:float 5s ease-in-out infinite;
+
+
+    box-shadow:
+
+
+    0 0 45px rgba(0,191,255,.18),
+
+
+    inset 0 0 40px rgba(0,191,255,.10);
+
+
+}
+
+
+
+
+
+
+.hero-icon::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:370px;
+
+
+    height:370px;
+
+
+    border-radius:50%;
+
+
+    border:
+
+
+    1px dashed rgba(0,191,255,.25);
+
+
+    animation:rotate 20s linear infinite;
+
+
+}
+
+
+
+
+
+.hero-icon i{
+
+
+    font-size:120px;
+
+
+    color:#00cfff;
+
+
+    text-shadow:
+
+
+    0 0 30px rgba(0,191,255,.55);
+
+
+}
+
+
+
+
+
+/* ==========================================================
+   ANIMAÇÕES HERO
+========================================================== */
+
+
+@keyframes float{
+
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+
+}
+
+
+
+@keyframes rotate{
+
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+
+}
+
+/* ==========================================================
+   WORLDBYTE TECNOLOGIA
+   sistemas.css
+
+   PARTE 2 - SOBRE O SISTEMA + BENEFÍCIOS
+========================================================== */
+
+
+/* ==========================================================
+   SOBRE O SERVIÇO
+========================================================== */
+
+
+.about-service{
+
+
+    padding:110px 0;
+
+
+    background:#07101d;
+
+
+}
+
+
+
+.section-title{
+
+
+    text-align:center;
+
+
+    margin-bottom:70px;
+
+
+}
+
+
+
+
+.section-title h2{
+
+
+    font-family:'Orbitron',sans-serif;
+
+
+    font-size:2.7rem;
+
+
+    margin-bottom:20px;
+
+
+    color:#ffffff;
+
+
+}
+
+
+
+
+
+.section-title h2 span{
+
+
+    color:#00cfff;
+
+
+}
+
+
+
+
+
+.section-title p{
+
+
+    max-width:760px;
+
+
+    margin:auto;
+
+
+    color:#b8c7d9;
+
+
+    line-height:1.8;
+
+
+    font-size:1.05rem;
+
+
+}
+
+
+
+
+
+
+/* ==========================================================
+   GRID SOBRE SISTEMA
+========================================================== */
+
+
+.about-grid{
+
+
+    display:grid;
+
+
+    grid-template-columns:2fr 1fr;
+
+
+    gap:60px;
+
+
+    align-items:center;
+
+
+}
+
+
+
+
+
+
+/* ==========================================================
+   TEXTO SOBRE
+========================================================== */
+
+
+.about-text h3{
+
+
+    font-family:'Orbitron',sans-serif;
+
+
+    font-size:2rem;
+
+
+    color:#00cfff;
+
+
+    margin-bottom:30px;
+
+
+}
+
+
+
+
+.about-text p{
+
+
+    color:#c7d3df;
+
+
+    line-height:2;
+
+
+    font-size:1.05rem;
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+
+.about-text ul{
+
+
+    margin-top:35px;
+
+
+}
+
+
+
+
+
+.about-text li{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:15px;
+
+
+    margin-bottom:20px;
+
+
+    color:#dde7f3;
+
+
+}
+
+
+
+
+
+.about-text li i{
+
+
+    color:#00cfff;
+
+
+    font-size:18px;
+
+
+}
+
+
+
+
+
+/* ==========================================================
+   CARD LATERAL TECNOLOGIA
+========================================================== */
+
+
+.about-card{
+
+
+    background:
+
+
+    rgba(255,255,255,.04);
+
+
+    border:
+
+
+    1px solid rgba(0,191,255,.20);
+
+
+    border-radius:25px;
+
+
+    padding:45px 35px;
+
+
+    text-align:center;
+
+
+    backdrop-filter:blur(18px);
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+
+    transition:.4s;
+
+
+}
+
+
+
+
+.about-card::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:200px;
+
+
+    height:200px;
+
+
+    background:#00cfff15;
+
+
+    border-radius:50%;
+
+
+    top:-80px;
+
+
+    right:-80px;
+
+
+}
+
+
+
+
+.about-card:hover{
+
+
+    transform:translateY(-12px);
+
+
+    border-color:#00cfff;
+
+
+    box-shadow:
+
+
+    0 25px 50px rgba(0,191,255,.20);
+
+
+}
+
+
+
+
+.about-card i{
+
+
+    font-size:80px;
+
+
+    color:#00cfff;
+
+
+    margin-bottom:30px;
+
+
+    text-shadow:
+
+
+    0 0 25px rgba(0,191,255,.45);
+
+
+}
+
+
+
+
+
+.about-card h3{
+
+
+    font-family:'Orbitron',sans-serif;
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+.about-card p{
+
+
+    color:#c3d0df;
+
+
+    line-height:1.8;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+   BENEFÍCIOS DOS SISTEMAS
+========================================================== */
+
+
+.benefits{
+
+
+    padding:110px 0;
+
+
+    background:#050b16;
+
+
+}
+
+
+
+
+
+
+
+.benefits-grid{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+    gap:35px;
+
+
+}
+
+
+
+
+
+
+
+/* ==========================================================
+   CARD BENEFÍCIOS
+========================================================== */
+
+
+.benefit-card{
+
+
+    background:
+
+
+    rgba(255,255,255,.04);
+
+
+    border:
+
+
+    1px solid rgba(0,191,255,.18);
+
+
+    border-radius:22px;
+
+
+    padding:45px 35px;
+
+
+    transition:.35s;
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+
+    backdrop-filter:blur(12px);
+
+
+}
+
+
+
+
+
+.benefit-card::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:230px;
+
+
+    height:230px;
+
+
+    background:
+
+
+    rgba(0,191,255,.08);
+
+
+    border-radius:50%;
+
+
+    top:-120px;
+
+
+    right:-120px;
+
+
+    transition:.4s;
+
+
+}
+
+
+
+
+
+.benefit-card:hover::before{
+
+
+    transform:scale(1.3);
+
+
+}
+
+
+
+
+
+.benefit-card:hover{
+
+
+    transform:translateY(-12px);
+
+
+    border-color:#00cfff;
+
+
+    box-shadow:
+
+
+    0 20px 50px rgba(0,191,255,.18);
+
+
+}
+
+
+
+
+
+
+
+.benefit-card i{
+
+
+    width:75px;
+
+
+    height:75px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    border-radius:18px;
+
+
+    background:#00cfff15;
+
+
+    color:#00cfff;
+
+
+    font-size:32px;
+
+
+    margin-bottom:28px;
+
+
+}
+
+
+
+
+
+.benefit-card h3{
+
+
+    font-family:'Orbitron',sans-serif;
+
+
+    font-size:1.25rem;
+
+
+    margin-bottom:18px;
+
+
+}
+
+
+
+
+
+.benefit-card p{
+
+
+    color:#c3d0df;
+
+
+    line-height:1.8;
+
+
+}
+
+
+
+
+
+
+
+/* ==========================================================
+   EFEITO LINHA INFERIOR
+========================================================== */
+
+
+.benefit-card::after{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    bottom:0;
+
+
+    left:0;
+
+
+    width:100%;
+
+
+    height:3px;
+
+
+    background:
+
+
+    linear-gradient(
+        90deg,
+        #00cfff,
+        #007bff
+    );
+
+
+    transform:scaleX(0);
+
+
+    transform-origin:left;
+
+
+    transition:.35s;
+
+
+}
+
+
+
+
+
+.benefit-card:hover::after{
+
+
+    transform:scaleX(1);
+
+
+}
+
+/* ==========================================================
+   WORLDBYTE TECNOLOGIA
+   sistemas.css
+
+   PARTE 3 - TIPOS DE SISTEMAS + TECNOLOGIAS
+========================================================== */
+
+
+/* ==========================================================
+   TIPOS DE SISTEMAS
+========================================================== */
+
+
+.systems-types{
+
+
+    padding:110px 0;
+
+
+    background:#07101d;
+
+
+}
+
+
+
+
+
+.systems-grid{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+
+    repeat(4,1fr);
+
+
+    gap:30px;
+
+
+}
+
+
+
+
+
+/* ==========================================================
+   CARD SISTEMAS
+========================================================== */
+
+
+.system-card{
+
+
+    background:
+
+
+    rgba(255,255,255,.04);
+
+
+    border:
+
+
+    1px solid rgba(0,191,255,.18);
+
+
+    border-radius:22px;
+
+
+    padding:40px 30px;
+
+
+    text-align:center;
+
+
+    transition:.35s;
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+
+    backdrop-filter:blur(12px);
+
+
+}
+
+
+
+
+
+
+.system-card::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:220px;
+
+
+    height:220px;
+
+
+    background:
+
+
+    rgba(0,191,255,.08);
+
+
+    border-radius:50%;
+
+
+    top:-110px;
+
+
+    right:-110px;
+
+
+    transition:.4s;
+
+
+}
+
+
+
+
+
+.system-card:hover::before{
+
+
+    transform:scale(1.4);
+
+
+}
+
+
+
+
+
+.system-card:hover{
+
+
+    transform:translateY(-12px);
+
+
+    border-color:#00cfff;
+
+
+    box-shadow:
+
+
+    0 20px 50px rgba(0,191,255,.20);
+
+
+}
+
+
+
+
+
+.system-card i{
+
+
+    width:80px;
+
+
+    height:80px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    margin:0 auto 25px;
+
+
+    border-radius:20px;
+
+
+    background:#00cfff15;
+
+
+    color:#00cfff;
+
+
+    font-size:35px;
+
+
+    transition:.35s;
+
+
+}
+
+
+
+
+
+.system-card:hover i{
+
+
+    transform:scale(1.1);
+
+
+    box-shadow:
+
+
+    0 0 25px rgba(0,191,255,.35);
+
+
+}
+
+
+
+
+
+.system-card h3{
+
+
+    font-family:'Orbitron',sans-serif;
+
+
+    font-size:1.2rem;
+
+
+    margin-bottom:18px;
+
+
+    color:#ffffff;
+
+
+}
+
+
+
+
+
+.system-card p{
+
+
+    color:#c3d0df;
+
+
+    line-height:1.8;
+
+
+    font-size:.95rem;
+
+
+}
+
+
+
+
+
+
+
+/* ==========================================================
+   LINHA NEON DOS CARDS
+========================================================== */
+
+
+.system-card::after{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    bottom:0;
+
+
+    left:0;
+
+
+    width:100%;
+
+
+    height:3px;
+
+
+    background:
+
+
+    linear-gradient(
+        90deg,
+        #00cfff,
+        #007bff
+    );
+
+
+    transform:scaleX(0);
+
+
+    transform-origin:left;
+
+
+    transition:.35s;
+
+
+}
+
+
+
+
+
+.system-card:hover::after{
+
+
+    transform:scaleX(1);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+   TECNOLOGIAS UTILIZADAS
+========================================================== */
+
+
+.technologies{
+
+
+    padding:110px 0;
+
+
+    background:#050b16;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+
+
+.tech-grid{
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    flex-wrap:wrap;
+
+
+    gap:20px;
+
+
+    margin-top:50px;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================================
+   TAGS TECNOLOGIAS
+========================================================== */
+
+
+.tech-item{
+
+
+    padding:15px 32px;
+
+
+    border-radius:50px;
+
+
+    border:
+
+
+    1px solid rgba(0,191,255,.35);
+
+
+    background:
+
+
+    rgba(0,191,255,.06);
+
+
+    color:#53c8ff;
+
+
+    font-weight:500;
+
+
+    transition:.35s;
+
+
+    backdrop-filter:blur(10px);
+
+
+}
+
+
+
+
+
+
+.tech-item:hover{
+
+
+    background:#00cfff;
+
+
+    color:#ffffff;
+
+
+    transform:translateY(-5px);
+
+
+    box-shadow:
+
+
+    0 12px 30px rgba(0,191,255,.35);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+   BLOCO DE DIFERENCIAIS
+========================================================== */
+
+
+.differentials{
+
+
+    padding:100px 0;
+
+
+    background:#07101d;
+
+
+}
+
+
+
+
+
+
+
+.differentials-grid{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+
+    repeat(3,1fr);
+
+
+    gap:30px;
+
+
+}
+
+
+
+
+
+
+.differential-box{
+
+
+    padding:35px;
+
+
+    border-radius:20px;
+
+
+    background:
+
+
+    rgba(255,255,255,.03);
+
+
+    border:
+
+
+    1px solid rgba(0,191,255,.15);
+
+
+    transition:.35s;
+
+
+}
+
+
+
+
+
+.differential-box:hover{
+
+
+    transform:translateY(-8px);
+
+
+    border-color:#00cfff;
+
+
+    box-shadow:
+
+
+    0 15px 35px rgba(0,191,255,.18);
+
+
+}
+
+
+
+
+
+.differential-box h3{
+
+
+    font-family:'Orbitron',sans-serif;
+
+
+    color:#00cfff;
+
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+
+
+.differential-box p{
+
+
+    color:#c7d3df;
+
+
+    line-height:1.8;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+   DESTAQUE TECNOLÓGICO
+========================================================== */
+
+
+.tech-highlight{
+
+
+    margin-top:70px;
+
+
+    padding:50px;
+
+
+    border-radius:30px;
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        rgba(0,191,255,.12),
+        rgba(0,110,255,.05)
+    );
+
+
+    border:
+
+
+    1px solid rgba(0,191,255,.25);
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+.tech-highlight h3{
+
+
+    font-family:'Orbitron',sans-serif;
+
+
+    font-size:2rem;
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+.tech-highlight p{
+
+
+    max-width:800px;
+
+
+    margin:auto;
+
+
+    color:#c7d3df;
+
+
+    line-height:1.9;
+
+
+}
+
+/* ==========================================================
+   WORLDBYTE TECNOLOGIA
+   sistemas.css
+
+   PARTE 4 - PROCESSO + CTA + FOOTER
+========================================================== */
+
+
+/* ==========================================================
+   PROCESSO DE DESENVOLVIMENTO
+========================================================== */
+
+
+.process{
+
+
+    padding:110px 0;
+
+
+    background:#050b16;
+
+
+}
+
+
+
+
+
+.process-title{
+
+
+    text-align:center;
+
+
+    margin-bottom:70px;
+
+
+}
+
+
+
+
+
+.process-title h2{
+
+
+    font-family:'Orbitron',sans-serif;
+
+
+    font-size:2.7rem;
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+.process-title p{
+
+
+    max-width:750px;
+
+
+    margin:auto;
+
+
+    color:#c7d3df;
+
+
+    line-height:1.8;
+
+
+}
+
+
+
+
+
+
+/* ==========================================================
+   TIMELINE
+========================================================== */
+
+
+.process-grid{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+
+    repeat(3,1fr);
+
+
+    gap:35px;
+
+
+}
+
+
+
+
+
+
+.process-card{
+
+
+    background:
+
+
+    rgba(255,255,255,.04);
+
+
+    border:
+
+
+    1px solid rgba(0,191,255,.18);
+
+
+    border-radius:25px;
+
+
+    padding:45px 30px;
+
+
+    text-align:center;
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+
+    transition:.35s;
+
+
+}
+
+
+
+
+
+.process-card::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:200px;
+
+
+    height:200px;
+
+
+    background:
+
+
+    rgba(0,191,255,.08);
+
+
+    border-radius:50%;
+
+
+    top:-100px;
+
+
+    right:-100px;
+
+
+}
+
+
+
+
+
+.process-card:hover{
+
+
+    transform:translateY(-12px);
+
+
+    border-color:#00cfff;
+
+
+    box-shadow:
+
+
+    0 20px 45px rgba(0,191,255,.20);
+
+
+}
+
+
+
+
+
+
+
+.process-number{
+
+
+    width:80px;
+
+
+    height:80px;
+
+
+    margin:0 auto 25px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    border-radius:50%;
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #00cfff,
+        #007bff
+    );
+
+
+    font-family:'Orbitron',sans-serif;
+
+
+    font-size:1.7rem;
+
+
+    font-weight:700;
+
+
+    color:#fff;
+
+
+    box-shadow:
+
+
+    0 10px 30px rgba(0,191,255,.35);
+
+
+}
+
+
+
+
+
+.process-card h3{
+
+
+    font-family:'Orbitron',sans-serif;
+
+
+    margin-bottom:15px;
+
+
+    font-size:1.3rem;
+
+
+}
+
+
+
+
+
+.process-card p{
+
+
+    color:#c7d3df;
+
+
+    line-height:1.8;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================================
+   CTA FINAL
+========================================================== */
+
+
+.cta{
+
+
+    padding:120px 0;
+
+
+    text-align:center;
+
+
+    background:
+
+
+    radial-gradient(
+        circle at center,
+        #00bfff18,
+        transparent 60%
+    ),
+
+
+    linear-gradient(
+        135deg,
+        #050b16,
+        #0a1830
+    );
+
+
+}
+
+
+
+
+
+.cta h2{
+
+
+    font-family:'Orbitron',sans-serif;
+
+
+    font-size:2.8rem;
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+
+.cta h2 span{
+
+
+    color:#00cfff;
+
+
+}
+
+
+
+
+
+.cta p{
+
+
+    max-width:750px;
+
+
+    margin:0 auto 40px;
+
+
+    color:#c7d3df;
+
+
+    font-size:1.05rem;
+
+
+    line-height:1.9;
+
+
+}
+
+
+
+
+
+.cta .btn{
+
+
+    display:inline-flex;
+
+
+    align-items:center;
+
+
+    gap:12px;
+
+
+    padding:18px 45px;
+
+
+    border-radius:50px;
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #00cfff,
+        #007bff
+    );
+
+
+    color:#ffffff;
+
+
+    font-weight:600;
+
+
+    transition:.35s;
+
+
+    box-shadow:
+
+
+    0 15px 35px rgba(0,191,255,.35);
+
+
+}
+
+
+
+
+
+.cta .btn:hover{
+
+
+    transform:translateY(-6px);
+
+
+    box-shadow:
+
+
+    0 25px 50px rgba(0,191,255,.45);
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+
+footer{
+
+    background:#030711;
+
+    border-top:1px solid rgba(255,255,255,.06);
+
+    padding:80px 0 35px;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+footer::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:rgba(0,174,239,.08);
+
+    filter:blur(180px);
+
+    right:-150px;
+    top:-180px;
+
+}
+
+footer .container{
+
+    position:relative;
+
+    z-index:2;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+.footer-logo h2{
+
+    font-size:2.2rem;
+
+    margin-bottom:10px;
+
+}
+
+.footer-logo span{
+
+    color:var(--primary-light);
+
+    text-shadow:0 0 20px var(--primary);
+
+}
+
+.footer-logo p{
+
+    color:var(--gray);
+
+    margin-bottom:35px;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================================
+   REDES SOCIAIS
+========================================================== */
+
+
+.social{
+
+
+    margin-top:20px;
+
+
+}
+
+
+
+
+
+.social a{
+
+
+    display:inline-flex;
+
+
+    width:45px;
+
+
+    height:45px;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    margin:0 8px;
+
+
+    border-radius:50%;
+
+
+    border:
+
+
+    1px solid rgba(0,191,255,.25);
+
+
+    color:#00cfff;
+
+
+    transition:.35s;
+
+
+}
+
+
+
+
+
+.social a:hover{
+
+
+    background:#00cfff;
+
+
+    color:#fff;
+
+
+    transform:translateY(-5px);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+   BOTÃO VOLTAR AO TOPO
+========================================================== */
+
+
+.back-top{
+
+
+    position:fixed;
+
+
+    right:25px;
+
+
+    bottom:25px;
+
+
+    width:55px;
+
+
+    height:55px;
+
+
+    border:none;
+
+
+    border-radius:50%;
+
+
+    background:#00cfff;
+
+
+    color:#fff;
+
+
+    cursor:pointer;
+
+
+    font-size:20px;
+
+
+    opacity:0;
+
+
+    visibility:hidden;
+
+
+    transition:.35s;
+
+
+    z-index:9999;
+
+
+    box-shadow:
+
+
+    0 10px 30px rgba(0,191,255,.45);
+
+
+}
+
+
+
+
+
+.back-top.show{
+
+
+    opacity:1;
+
+
+    visibility:visible;
+
+
+}
+
+
+
+
+
+.back-top:hover{
+
+
+    transform:translateY(-6px);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+   ANIMAÇÕES REVEAL
+========================================================== */
+
+
+.reveal{
+
+
+    opacity:0;
+
+
+    transform:translateY(50px);
+
+
+    transition:1s;
+
+
+}
+
+
+
+
+
+.reveal.active{
+
+
+    opacity:1;
+
+
+    transform:translateY(0);
+
+
+}
+
+/* ==========================================================
+   WORLDBYTE TECNOLOGIA
+   sistemas.css
+
+   PARTE 5 - RESPONSIVIDADE + AJUSTES FINAIS
+========================================================== */
+
+
+/* ==========================================================
+   TABLETS
+========================================================== */
+
+
+@media(max-width:1100px){
+
+
+
+    /* HERO */
+
+    .hero-grid{
+
+
+        grid-template-columns:1fr;
+
+
+        text-align:center;
+
+
+    }
+
+
+
+
+    .hero-text p{
+
+
+        margin-left:auto;
+
+
+        margin-right:auto;
+
+
+    }
+
+
+
+
+    .hero-buttons{
+
+
+        justify-content:center;
+
+
+    }
+
+
+
+
+    .hero-image{
+
+
+        margin-top:50px;
+
+
+    }
+
+
+
+
+
+
+    /* SOBRE */
+
+
+    .about-grid{
+
+
+        grid-template-columns:1fr;
+
+
+        gap:50px;
+
+
+    }
+
+
+
+
+    .about-text{
+
+
+        text-align:center;
+
+
+    }
+
+
+
+
+    .about-text ul{
+
+
+        display:inline-block;
+
+
+        text-align:left;
+
+
+    }
+
+
+
+
+
+
+    /* SISTEMAS */
+
+
+    .systems-grid{
+
+
+        grid-template-columns:
+
+
+        repeat(2,1fr);
+
+
+    }
+
+
+
+
+
+
+    /* BENEFÍCIOS */
+
+
+    .benefits-grid{
+
+
+        grid-template-columns:
+
+
+        repeat(2,1fr);
+
+
+    }
+
+
+
+
+
+
+    /* DIFERENCIAIS */
+
+
+    .differentials-grid{
+
+
+        grid-template-columns:
+
+
+        repeat(2,1fr);
+
+
+    }
+
+
+
+
+
+
+
+    /* PROCESSO */
+
+
+    .process-grid{
+
+
+        grid-template-columns:
+
+
+        repeat(2,1fr);
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+   CELULARES
+========================================================== */
+
+
+@media(max-width:768px){
+
+
+
+
+
+    /* HERO */
+
+
+    .hero-service{
+
+
+        padding:140px 0 90px;
+
+
+    }
+
+
+
+
+    .hero-text h1{
+
+
+        font-size:2.6rem;
+
+
+    }
+
+
+
+
+
+    .hero-text p{
+
+
+        font-size:1rem;
+
+
+    }
+
+
+
+
+
+    .hero-buttons{
+
+
+        flex-direction:column;
+
+
+        align-items:center;
+
+
+    }
+
+
+
+
+
+    .hero-buttons a{
+
+
+        width:100%;
+
+
+        justify-content:center;
+
+
+        text-align:center;
+
+
+    }
+
+
+
+
+
+
+
+    .hero-icon{
+
+
+        width:240px;
+
+
+        height:240px;
+
+
+    }
+
+
+
+
+
+    .hero-icon::before{
+
+
+        width:280px;
+
+
+        height:280px;
+
+
+    }
+
+
+
+
+
+    .hero-icon i{
+
+
+        font-size:90px;
+
+
+    }
+
+
+
+
+
+
+
+
+
+    /* TÍTULOS */
+
+
+    .section-title h2,
+
+
+    .process-title h2,
+
+
+    .cta h2{
+
+
+        font-size:2rem;
+
+
+    }
+
+
+
+
+
+
+
+    /* BENEFÍCIOS */
+
+
+    .benefits-grid{
+
+
+        grid-template-columns:1fr;
+
+
+    }
+
+
+
+
+
+
+
+
+    /* SISTEMAS */
+
+
+    .systems-grid{
+
+
+        grid-template-columns:1fr;
+
+
+    }
+
+
+
+
+
+
+
+
+    /* TECNOLOGIAS */
+
+
+    .tech-grid{
+
+
+        gap:15px;
+
+
+    }
+
+
+
+
+
+    .tech-item{
+
+
+        width:100%;
+
+
+    }
+
+
+
+
+
+
+
+    /* DIFERENCIAIS */
+
+
+    .differentials-grid{
+
+
+        grid-template-columns:1fr;
+
+
+    }
+
+
+
+
+
+
+
+    /* PROCESSO */
+
+
+    .process-grid{
+
+
+        grid-template-columns:1fr;
+
+
+    }
+
+
+
+
+
+    .process-card{
+
+
+        padding:35px 25px;
+
+
+    }
+
+
+
+
+
+
+    /* CTA */
+
+
+    .cta{
+
+
+        padding:90px 20px;
+
+
+    }
+
+
+
+
+
+    .cta h2{
+
+
+        font-size:1.8rem;
+
+
+    }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+   CELULARES PEQUENOS
+========================================================== */
+
+
+@media(max-width:480px){
+
+
+
+
+
+    .hero-text h1{
+
+
+        font-size:2rem;
+
+
+    }
+
+
+
+
+
+    .hero-text p{
+
+
+        font-size:.95rem;
+
+
+        line-height:1.7;
+
+
+    }
+
+
+
+
+
+
+
+    .hero-icon{
+
+
+        width:200px;
+
+
+        height:200px;
+
+
+    }
+
+
+
+
+
+    .hero-icon::before{
+
+
+        width:240px;
+
+
+        height:240px;
+
+
+    }
+
+
+
+
+
+    .hero-icon i{
+
+
+        font-size:75px;
+
+
+    }
+
+
+
+
+
+
+    .section-title h2{
+
+
+        font-size:1.7rem;
+
+
+    }
+
+
+
+
+
+
+    .about-text h3{
+
+
+        font-size:1.5rem;
+
+
+    }
+
+
+
+
+
+
+    .about-card{
+
+
+        padding:35px 25px;
+
+
+    }
+
+
+
+
+
+
+    .about-card i{
+
+
+        font-size:60px;
+
+
+    }
+
+
+
+
+
+
+    .benefit-card,
+
+
+    .system-card{
+
+
+        padding:35px 25px;
+
+
+    }
+
+
+
+
+
+
+    .tech-highlight{
+
+
+        padding:35px 20px;
+
+
+    }
+
+
+
+
+
+
+    .tech-highlight h3{
+
+
+        font-size:1.5rem;
+
+
+    }
+
+
+
+
+
+
+
+    .cta .btn{
+
+
+        width:100%;
+
+
+        justify-content:center;
+
+
+    }
+
+
+
+
+
+    .back-top{
+
+
+        width:48px;
+
+
+        height:48px;
+
+
+        right:18px;
+
+
+        bottom:18px;
+
+
+    }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+   ANIMAÇÃO DE ENTRADA DOS ELEMENTOS
+========================================================== */
+
+
+.reveal{
+
+
+    opacity:0;
+
+
+    transform:translateY(40px);
+
+
+    transition:all .8s ease;
+
+
+}
+
+
+
+
+.reveal.active{
+
+
+    opacity:1;
+
+
+    transform:translateY(0);
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================================
+   AJUSTE MENU MOBILE
+========================================================== */
+
+
+.menu.active{
+
+
+    display:flex;
+
+
+}
+
+
+
+
+
+
+/* ==========================================================
+   EFEITO SCROLL HEADER
+========================================================== */
+
+
+header.scroll{
+
+
+    background:
+
+
+    rgba(5,11,22,.95);
+
+
+    backdrop-filter:blur(15px);
+
+
+    box-shadow:
+
+
+    0 10px 30px rgba(0,0,0,.35);
+
+
+}
