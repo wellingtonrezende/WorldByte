@@ -1,386 +1,303 @@
-```javascript
-/* =====================================
-   WORLD BYTE TECNOLOGIA
-   SCRIPT JS
-   Interações e Animações
-===================================== */
 
 
+/*==================================================
+VALIDAÇÃO PROFISSIONAL DO FORMULÁRIO
+==================================================*/
 
-// ===============================
-// MENU MOBILE
-// ===============================
+const form = document.querySelector(".contact-form");
 
+if (form) {
 
-const menuButton = document.querySelector(".menu-mobile");
+    const fields = form.querySelectorAll(
+        "input:not([type='checkbox']), select, textarea"
+    );
 
-const navbar = document.querySelector(".navbar");
+    const emailRegex =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+    const phoneRegex =
+        /^\(\d{2}\)\s\d{4,5}-\d{4}$/;
 
-menuButton.addEventListener("click", () => {
+    const removeFieldError = field => {
 
+        const group = field.closest(".form-group");
 
-    navbar.classList.toggle("active");
+        if (!group) return;
 
+        group.classList.remove("invalid");
 
-    const icon = menuButton.querySelector("i");
+        const error =
+            group.querySelector(".field-error");
 
+        if (error) {
 
-    if(navbar.classList.contains("active")){
+            error.remove();
 
-        icon.classList.remove("fa-bars");
+        }
 
-        icon.classList.add("fa-xmark");
+    };
+
+    const showFieldError = (field, message) => {
+
+        const group = field.closest(".form-group");
+
+        if (!group) return;
+
+        removeFieldError(field);
+
+        group.classList.remove("valid");
+        group.classList.add("invalid");
+
+        const error =
+            document.createElement("span");
+
+        error.className = "field-error";
+
+        error.textContent = message;
+
+        error.setAttribute("role", "alert");
+
+        group.appendChild(error);
+
+        field.setAttribute("aria-invalid", "true");
+
+    };
+
+    const markFieldValid = field => {
+
+        const group = field.closest(".form-group");
+
+        if (!group) return;
+
+        removeFieldError(field);
+
+        group.classList.remove("invalid");
+        group.classList.add("valid");
+
+        field.setAttribute("aria-invalid", "false");
+
+    };
+
+    const validateField = field => {
+
+        const value = field.value.trim();
+
+        if (field.hasAttribute("required") && !value) {
+
+            showFieldError(
+                field,
+                "Este campo é obrigatório."
+            );
+
+            return false;
+
+        }
+
+        if (
+            field.type === "email" &&
+            value &&
+            !emailRegex.test(value)
+        ) {
+
+            showFieldError(
+                field,
+                "Digite um endereço de e-mail válido."
+            );
+
+            return false;
+
+        }
+
+        if (
+            field.type === "tel" &&
+            value &&
+            !phoneRegex.test(value)
+        ) {
+
+            showFieldError(
+                field,
+                "Digite um telefone válido com DDD."
+            );
+
+            return false;
+
+        }
+
+        if (
+            field.tagName === "TEXTAREA" &&
+            value.length > 0 &&
+            value.length < 15
+        ) {
+
+            showFieldError(
+                field,
+                "Escreva uma mensagem com pelo menos 15 caracteres."
+            );
+
+            return false;
+
+        }
+
+        if (value) {
+
+            markFieldValid(field);
+
+        } else {
+
+            removeFieldError(field);
+
+        }
+
+        return true;
+
+    };
+
+    fields.forEach(field => {
+
+        field.addEventListener("blur", () => {
+
+            validateField(field);
+
+        });
+
+        field.addEventListener("input", () => {
+
+            if (
+                field
+                    .closest(".form-group")
+                    ?.classList
+                    .contains("invalid")
+            ) {
+
+                validateField(field);
+
+            }
+
+        });
+
+    });
+
+    form.addEventListener("submit", event => {
+
+        const fieldsAreValid =
+            [...fields].every(validateField);
+
+        const privacy =
+            form.querySelector("#privacidade");
+
+        const privacyIsValid =
+            !privacy || privacy.checked;
+
+        if (!privacyIsValid) {
+
+            privacy.focus();
+
+        }
+
+        if (!fieldsAreValid || !privacyIsValid) {
+
+            event.preventDefault();
+
+            const firstInvalid =
+                form.querySelector(
+                    '[aria-invalid="true"]'
+                );
+
+            if (firstInvalid) {
+
+                firstInvalid.focus();
+
+            }
+
+        }
+
+    });
+
+}
+
+/*==================================================
+CONSENTIMENTO DE COOKIES
+==================================================*/
+
+const cookieBanner =
+    document.querySelector("#cookieBanner");
+
+const acceptCookies =
+    document.querySelector("#acceptCookies");
+
+const rejectCookies =
+    document.querySelector("#rejectCookies");
+
+const cookieConsent =
+    localStorage.getItem(
+        "worldbyte-cookie-consent"
+    );
+
+if (cookieBanner && !cookieConsent) {
+
+    setTimeout(() => {
+
+        cookieBanner.classList.add("show");
+
+    }, 1200);
+
+}
+
+const saveCookieChoice = choice => {
+
+    localStorage.setItem(
+        "worldbyte-cookie-consent",
+        choice
+    );
+
+    cookieBanner?.classList.remove("show");
+
+};
+
+acceptCookies?.addEventListener("click", () => {
+
+    saveCookieChoice("accepted");
+
+});
+
+rejectCookies?.addEventListener("click", () => {
+
+    saveCookieChoice("rejected");
+
+});
+
+/*==================================================
+CARREGAMENTO DAS IMAGENS
+==================================================*/
+
+const pageImages =
+    document.querySelectorAll(
+        ".image-wrapper img"
+    );
+
+pageImages.forEach(image => {
+
+    const wrapper =
+        image.closest(".image-wrapper");
+
+    const markAsLoaded = () => {
+
+        wrapper?.classList.add("loaded");
+
+    };
+
+    if (image.complete) {
+
+        markAsLoaded();
 
     } else {
 
-        icon.classList.remove("fa-xmark");
-
-        icon.classList.add("fa-bars");
-
-    }
-
-
-});
-
-
-
-
-
-// Fecha menu ao clicar nos links
-
-const navLinks = document.querySelectorAll(".navbar a");
-
-
-navLinks.forEach(link => {
-
-
-    link.addEventListener("click",()=>{
-
-
-        navbar.classList.remove("active");
-
-
-        const icon = menuButton.querySelector("i");
-
-
-        icon.classList.remove("fa-xmark");
-
-        icon.classList.add("fa-bars");
-
-
-    });
-
-
-});
-
-
-
-
-
-
-
-// ===============================
-// NAVEGAÇÃO SUAVE
-// ===============================
-
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-
-    anchor.addEventListener("click", function(e){
-
-
-        e.preventDefault();
-
-
-        const target = document.querySelector(
-            this.getAttribute("href")
+        image.addEventListener(
+            "load",
+            markAsLoaded,
+            { once:true }
         );
 
-
-        if(target){
-
-
-            target.scrollIntoView({
-
-                behavior:"smooth"
-
-            });
-
-
-        }
-
-
-    });
-
-
-});
-
-
-
-
-
-
-
-
-// ===============================
-// HEADER DINÂMICO NO SCROLL
-// ===============================
-
-
-const header = document.querySelector(".header");
-
-
-window.addEventListener("scroll",()=>{
-
-
-    if(window.scrollY > 50){
-
-
-        header.style.background =
-        "rgba(5,8,22,0.95)";
-
-
-        header.style.boxShadow =
-        "0 0 25px rgba(0,170,255,.2)";
-
-
-    }else{
-
-
-        header.style.background =
-        "rgba(5,8,22,.8)";
-
-
-        header.style.boxShadow =
-        "none";
-
-
     }
 
-
 });
-
-
-
-
-
-
-
-
-// ===============================
-// ANIMAÇÃO AO ROLAR A PÁGINA
-// ===============================
-
-
-const observer = new IntersectionObserver(
-
-(entries)=>{
-
-
-    entries.forEach(entry=>{
-
-
-        if(entry.isIntersecting){
-
-
-            entry.target.classList.add("show");
-
-
-        }
-
-
-    });
-
-
-},
-
-{
-
-    threshold:0.15
-
-}
-
-);
-
-
-
-
-
-
-
-// Elementos que receberão animação
-
-const animatedElements = document.querySelectorAll(
-
-    ".card, .box, .project, .tech-list div, section h2"
-
-);
-
-
-
-animatedElements.forEach(element=>{
-
-
-    element.classList.add("hidden");
-
-
-    observer.observe(element);
-
-
-});
-
-
-
-
-
-
-
-// ===============================
-// EFEITO DIGITAÇÃO NO HERO
-// ===============================
-
-
-const heroTitle = document.querySelector(".hero h1 span");
-
-
-if(heroTitle){
-
-
-    const text = heroTitle.textContent;
-
-
-    heroTitle.textContent="";
-
-
-    let index=0;
-
-
-
-    function typing(){
-
-
-        if(index < text.length){
-
-
-            heroTitle.textContent += text.charAt(index);
-
-
-            index++;
-
-
-            setTimeout(typing,80);
-
-
-        }
-
-
-    }
-
-
-    setTimeout(typing,700);
-
-
-}
-
-
-
-
-
-
-
-
-// ===============================
-// ANO AUTOMÁTICO FOOTER
-// ===============================
-
-
-const footerYear = document.querySelector("footer p");
-
-
-if(footerYear){
-
-
-    const year = new Date().getFullYear();
-
-
-    footerYear.innerHTML =
-
-    footerYear.innerHTML.replace(
-
-        "2026",
-
-        year
-
-    );
-
-
-}
-
-
-
-
-
-
-
-// ===============================
-// BOTÃO WHATSAPP EFEITO
-// ===============================
-
-
-const whatsapp = document.querySelector(
-".whatsapp-float"
-);
-
-
-if(whatsapp){
-
-
-setInterval(()=>{
-
-
-    whatsapp.style.transform =
-    "scale(1.1)";
-
-
-    setTimeout(()=>{
-
-
-        whatsapp.style.transform =
-        "scale(1)";
-
-
-    },500);
-
-
-
-},2500);
-
-
-}
-
-
-
-
-
-
-
-
-// ===============================
-// CURSOR DE TECNOLOGIA
-// ===============================
-
-
-document.addEventListener(
-"mousemove",
-(e)=>{
-
-
-const glow =
-document.querySelector(".hero::before");
-
-
-});
-
-```

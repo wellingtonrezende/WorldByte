@@ -1207,3 +1207,6334 @@ ANIMAÇÕES
     transform:translateY(0);
 
 }
+
+/* ==========================================================
+   WORLDBYTE
+   DESENVOLVIMENTO DE SITES
+   FASE 1 - CORREÇÕES E BASE PROFISSIONAL
+========================================================== */
+
+:root{
+
+    --primary:#00cfff;
+    --primary-dark:#007bff;
+
+    --background:#050b16;
+    --background-soft:#07101d;
+    --background-card:rgba(255,255,255,.04);
+
+    --text:#ffffff;
+    --text-soft:#c7d3df;
+    --text-gray:#9eb0c3;
+
+    --border:rgba(0,207,255,.18);
+    --border-hover:rgba(0,207,255,.7);
+
+    --shadow:0 20px 50px rgba(0,191,255,.16);
+
+    --radius-sm:14px;
+    --radius-md:22px;
+    --radius-lg:30px;
+
+    --transition:.35s ease;
+
+}
+
+/* ==========================================================
+   BASE
+========================================================== */
+
+body{
+
+    min-height:100vh;
+
+    background:
+    radial-gradient(circle at 10% 10%,rgba(0,207,255,.04),transparent 28%),
+    radial-gradient(circle at 90% 80%,rgba(0,123,255,.05),transparent 30%),
+    var(--background);
+
+    color:var(--text);
+
+}
+
+img{
+
+    max-width:100%;
+    display:block;
+
+}
+
+button,
+input,
+textarea,
+select{
+
+    font:inherit;
+
+}
+
+button{
+
+    border:0;
+    outline:0;
+
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    padding:22px 0;
+
+    transition:
+    background var(--transition),
+    box-shadow var(--transition),
+    padding var(--transition),
+    backdrop-filter var(--transition);
+
+}
+
+.header .container{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:30px;
+
+}
+
+.header.scroll{
+
+    padding:14px 0;
+
+    background:rgba(5,11,22,.88);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:0 10px 35px rgba(0,0,0,.28);
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+/* ==========================================================
+   LOGO
+========================================================== */
+
+.logo{
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:1.65rem;
+
+    font-weight:800;
+
+    letter-spacing:.5px;
+
+    color:#fff;
+
+    white-space:nowrap;
+
+}
+
+.logo span{
+
+    color:var(--primary);
+
+    text-shadow:0 0 18px rgba(0,207,255,.35);
+
+}
+
+/* ==========================================================
+   NAVBAR
+========================================================== */
+
+.navbar{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+
+}
+
+.navbar a{
+
+    position:relative;
+
+    color:#dce7f3;
+
+    font-size:.95rem;
+
+    font-weight:500;
+
+    transition:color var(--transition);
+
+}
+
+.navbar a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-8px;
+
+    width:100%;
+    height:2px;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--primary-dark)
+    );
+
+    transform:scaleX(0);
+
+    transform-origin:right;
+
+    transition:transform var(--transition);
+
+}
+
+.navbar a:hover{
+
+    color:var(--primary);
+
+}
+
+.navbar a:hover::after{
+
+    transform:scaleX(1);
+
+    transform-origin:left;
+
+}
+
+/* ==========================================================
+   BOTÃO MENU MOBILE
+========================================================== */
+
+.menu-mobile{
+
+    display:none;
+
+    width:48px;
+    height:48px;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:rgba(0,207,255,.08);
+
+    border:1px solid rgba(0,207,255,.22);
+
+    color:var(--primary);
+
+    font-size:1.4rem;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.menu-mobile:hover{
+
+    background:rgba(0,207,255,.16);
+
+    transform:translateY(-2px);
+
+}
+
+.menu-mobile.active{
+
+    background:var(--primary);
+
+    color:#04101b;
+
+    box-shadow:0 10px 30px rgba(0,207,255,.3);
+
+}
+
+/* ==========================================================
+   CORREÇÃO DO SCROLL PARA HEADER FIXO
+========================================================== */
+
+section[id]{
+
+    scroll-margin-top:100px;
+
+}
+
+/* ==========================================================
+   BOTÕES
+========================================================== */
+
+.btn,
+.btn-whatsapp{
+
+    position:relative;
+
+    overflow:hidden;
+
+    isolation:isolate;
+
+}
+
+.btn::before,
+.btn-whatsapp::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:60%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+
+    transition:.6s;
+
+    z-index:-1;
+
+}
+
+.btn:hover::before,
+.btn-whatsapp:hover::before{
+
+    left:150%;
+
+}
+
+/* ==========================================================
+   TÍTULOS
+========================================================== */
+
+.section-title{
+
+    position:relative;
+
+}
+
+.section-title h2{
+
+    position:relative;
+
+    display:inline-block;
+
+}
+
+.section-title h2::after{
+
+    content:"";
+
+    display:block;
+
+    width:75px;
+    height:4px;
+
+    margin:18px auto 0;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--primary-dark)
+    );
+
+    box-shadow:0 0 15px rgba(0,207,255,.3);
+
+}
+
+/* ==========================================================
+   ACESSIBILIDADE
+========================================================== */
+
+a:focus-visible,
+button:focus-visible{
+
+    outline:3px solid rgba(0,207,255,.45);
+
+    outline-offset:4px;
+
+}
+
+/* ==========================================================
+   MENU MOBILE
+========================================================== */
+
+@media(max-width:900px){
+
+    .menu-mobile{
+
+        display:flex;
+
+    }
+
+    .navbar{
+
+        position:absolute;
+
+        top:calc(100% + 12px);
+        left:5%;
+
+        width:90%;
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:0;
+
+        padding:14px;
+
+        border-radius:22px;
+
+        background:rgba(5,11,22,.97);
+
+        border:1px solid rgba(0,207,255,.16);
+
+        backdrop-filter:blur(20px);
+
+        -webkit-backdrop-filter:blur(20px);
+
+        box-shadow:0 25px 60px rgba(0,0,0,.45);
+
+        opacity:0;
+
+        visibility:hidden;
+
+        transform:translateY(-15px);
+
+        pointer-events:none;
+
+        transition:
+        opacity var(--transition),
+        visibility var(--transition),
+        transform var(--transition);
+
+    }
+
+    .navbar.active{
+
+        opacity:1;
+
+        visibility:visible;
+
+        transform:translateY(0);
+
+        pointer-events:auto;
+
+    }
+
+    .navbar a{
+
+        padding:15px 16px;
+
+        border-radius:12px;
+
+    }
+
+    .navbar a::after{
+
+        display:none;
+
+    }
+
+    .navbar a:hover{
+
+        background:rgba(0,207,255,.08);
+
+    }
+
+}
+
+/* ==========================================================
+   TELAS PEQUENAS
+========================================================== */
+
+@media(max-width:480px){
+
+    .container{
+
+        width:92%;
+
+    }
+
+    .header{
+
+        padding:16px 0;
+
+    }
+
+    .logo{
+
+        font-size:1.35rem;
+
+    }
+
+    .menu-mobile{
+
+        width:44px;
+        height:44px;
+
+    }
+
+}
+
+/* ==========================================================
+   REDUÇÃO DE MOVIMENTO
+========================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+    html{
+
+        scroll-behavior:auto;
+
+    }
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:.01ms !important;
+
+        animation-iteration-count:1 !important;
+
+        transition-duration:.01ms !important;
+
+    }
+
+}
+
+/* ==========================================================
+   WORLDBYTE
+   DESENVOLVIMENTO DE SITES
+   FASE 2 - HERO PREMIUM
+========================================================== */
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.hero-service{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:160px 0 110px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    isolation:isolate;
+
+    background:
+
+    radial-gradient(
+        circle at 85% 20%,
+        rgba(0,207,255,.16),
+        transparent 30%
+    ),
+
+    radial-gradient(
+        circle at 10% 80%,
+        rgba(0,123,255,.12),
+        transparent 32%
+    ),
+
+    linear-gradient(
+        135deg,
+        #040914 0%,
+        #071321 48%,
+        #091b31 100%
+    );
+
+}
+
+/* Grade tecnológica de fundo */
+
+.hero-service::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    border-radius:0;
+
+    background:
+
+    linear-gradient(
+        rgba(0,207,255,.035) 1px,
+        transparent 1px
+    ),
+
+    linear-gradient(
+        90deg,
+        rgba(0,207,255,.035) 1px,
+        transparent 1px
+    );
+
+    background-size:55px 55px;
+
+    filter:none;
+
+    top:0;
+    right:0;
+
+    opacity:.7;
+
+    z-index:-3;
+
+    mask-image:
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,.9),
+        transparent 95%
+    );
+
+}
+
+/* Luzes difusas */
+
+.hero-service::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+    height:650px;
+
+    left:50%;
+    bottom:-420px;
+
+    transform:translateX(-50%);
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(0,207,255,.15),
+        rgba(0,123,255,.06) 38%,
+        transparent 70%
+    );
+
+    filter:blur(20px);
+
+    z-index:-2;
+
+}
+
+/* ==========================================================
+   GRID DO HERO
+========================================================== */
+
+.hero-grid{
+
+    grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);
+
+    gap:90px;
+
+    width:100%;
+
+}
+
+/* ==========================================================
+   TEXTO DO HERO
+========================================================== */
+
+.hero-text{
+
+    position:relative;
+
+    max-width:720px;
+
+}
+
+.hero-text .tag{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 20px;
+
+    margin-bottom:28px;
+
+    border-radius:50px;
+
+    border:1px solid rgba(0,207,255,.26);
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(0,207,255,.11),
+        rgba(0,123,255,.06)
+    );
+
+    color:#73dcff;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    text-transform:uppercase;
+
+    letter-spacing:1.4px;
+
+    box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.06),
+    0 10px 30px rgba(0,0,0,.15);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+}
+
+/* Ponto brilhante na tag */
+
+.hero-text .tag::before{
+
+    content:"";
+
+    width:8px;
+    height:8px;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    box-shadow:
+    0 0 0 5px rgba(0,207,255,.1),
+    0 0 16px rgba(0,207,255,.9);
+
+    animation:heroPulse 2s ease-in-out infinite;
+
+}
+
+.hero-text h1{
+
+    max-width:760px;
+
+    margin-bottom:28px;
+
+    font-size:clamp(2.7rem,5.4vw,4.7rem);
+
+    line-height:1.08;
+
+    letter-spacing:-1.5px;
+
+    text-wrap:balance;
+
+}
+
+.hero-text h1 span{
+
+    display:block;
+
+    margin-top:8px;
+
+    color:transparent;
+
+    background:
+    linear-gradient(
+        90deg,
+        #00d9ff 0%,
+        #65eaff 45%,
+        #2387ff 100%
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    text-shadow:none;
+
+    filter:
+    drop-shadow(
+        0 0 18px rgba(0,207,255,.22)
+    );
+
+}
+
+.hero-text p{
+
+    max-width:650px;
+
+    margin-bottom:42px;
+
+    color:#c6d5e5;
+
+    font-size:1.08rem;
+
+    line-height:1.9;
+
+}
+
+/* ==========================================================
+   BOTÕES DO HERO
+========================================================== */
+
+.hero-buttons{
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+.hero-buttons .btn,
+.hero-buttons .btn-whatsapp{
+
+    min-height:56px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    font-size:.98rem;
+
+    font-weight:600;
+
+    letter-spacing:.2px;
+
+}
+
+.hero-buttons .btn{
+
+    background:
+    linear-gradient(
+        135deg,
+        #00cfff,
+        #007bff
+    );
+
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,.14);
+
+    box-shadow:
+    0 15px 35px rgba(0,123,255,.24),
+    inset 0 1px 0 rgba(255,255,255,.28);
+
+}
+
+.hero-buttons .btn:hover{
+
+    transform:translateY(-5px) scale(1.015);
+
+    box-shadow:
+    0 22px 45px rgba(0,123,255,.32),
+    0 0 25px rgba(0,207,255,.18);
+
+}
+
+.hero-buttons .btn-whatsapp{
+
+    color:#58e58d;
+
+    border:1px solid rgba(37,211,102,.5);
+
+    background:rgba(37,211,102,.055);
+
+    box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.05);
+
+}
+
+.hero-buttons .btn-whatsapp i{
+
+    font-size:1.25rem;
+
+}
+
+.hero-buttons .btn-whatsapp:hover{
+
+    color:#fff;
+
+    background:
+    linear-gradient(
+        135deg,
+        #25d366,
+        #128c4b
+    );
+
+    border-color:transparent;
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 18px 38px rgba(37,211,102,.22);
+
+}
+
+/* ==========================================================
+   ÁREA VISUAL DO HERO
+========================================================== */
+
+.hero-image{
+
+    min-height:430px;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:transform .18s ease-out;
+
+    will-change:transform;
+
+}
+
+/* Luz atrás do ícone */
+
+.hero-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:390px;
+    height:390px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(0,207,255,.16),
+        rgba(0,123,255,.06) 46%,
+        transparent 70%
+    );
+
+    filter:blur(8px);
+
+    animation:heroGlow 5s ease-in-out infinite;
+
+}
+
+/* Pequenos pontos decorativos */
+
+.hero-image::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:470px;
+    height:470px;
+
+    border-radius:50%;
+
+    background-image:
+    radial-gradient(
+        circle,
+        rgba(110,225,255,.75) 1.5px,
+        transparent 1.8px
+    );
+
+    background-size:34px 34px;
+
+    opacity:.28;
+
+    mask-image:
+    radial-gradient(
+        circle,
+        #000 30%,
+        transparent 72%
+    );
+
+    animation:rotateReverse 30s linear infinite;
+
+}
+
+/* ==========================================================
+   ÍCONE PRINCIPAL
+========================================================== */
+
+.hero-icon{
+
+    width:330px;
+    height:330px;
+
+    z-index:2;
+
+    border-radius:32% 68% 58% 42% / 43% 40% 60% 57%;
+
+    border:1px solid rgba(0,207,255,.3);
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.07),
+        rgba(255,255,255,.018)
+    );
+
+    box-shadow:
+
+    0 35px 80px rgba(0,0,0,.36),
+
+    0 0 55px rgba(0,207,255,.12),
+
+    inset 0 1px 0 rgba(255,255,255,.12),
+
+    inset 0 0 45px rgba(0,207,255,.05);
+
+    backdrop-filter:blur(20px);
+
+    -webkit-backdrop-filter:blur(20px);
+
+    animation:
+    float 5s ease-in-out infinite,
+    heroMorph 9s ease-in-out infinite;
+
+}
+
+/* Órbita exterior */
+
+.hero-icon::before{
+
+    width:390px;
+    height:390px;
+
+    border:1px dashed rgba(0,207,255,.27);
+
+    box-shadow:
+    0 0 35px rgba(0,207,255,.06);
+
+    animation:rotate 22s linear infinite;
+
+}
+
+/* Segunda órbita */
+
+.hero-icon::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:285px;
+    height:285px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(0,123,255,.2);
+
+    box-shadow:
+    inset 0 0 35px rgba(0,207,255,.05);
+
+    animation:rotateReverse 16s linear infinite;
+
+}
+
+/* Ícone de código */
+
+.hero-icon i{
+
+    position:relative;
+
+    z-index:3;
+
+    font-size:118px;
+
+    color:transparent;
+
+    background:
+    linear-gradient(
+        135deg,
+        #e7fbff,
+        #00cfff 42%,
+        #1988ff
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    filter:
+    drop-shadow(
+        0 0 18px rgba(0,207,255,.45)
+    );
+
+}
+
+/* ==========================================================
+   DETALHES FLUTUANTES
+========================================================== */
+
+.hero-image .hero-icon{
+
+    isolation:isolate;
+
+}
+
+.hero-image .hero-icon i::after{
+
+    content:"";
+
+}
+
+/* ==========================================================
+   ANIMAÇÕES
+========================================================== */
+
+@keyframes heroPulse{
+
+    0%,
+    100%{
+
+        opacity:.75;
+
+        transform:scale(.9);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1.12);
+
+    }
+
+}
+
+@keyframes heroGlow{
+
+    0%,
+    100%{
+
+        opacity:.7;
+
+        transform:scale(.95);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1.07);
+
+    }
+
+}
+
+@keyframes heroMorph{
+
+    0%,
+    100%{
+
+        border-radius:
+        32% 68% 58% 42% /
+        43% 40% 60% 57%;
+
+    }
+
+    50%{
+
+        border-radius:
+        58% 42% 35% 65% /
+        58% 61% 39% 42%;
+
+    }
+
+}
+
+@keyframes rotateReverse{
+
+    from{
+
+        transform:rotate(360deg);
+
+    }
+
+    to{
+
+        transform:rotate(0deg);
+
+    }
+
+}
+
+/* ==========================================================
+   RESPONSIVIDADE DO HERO
+========================================================== */
+
+@media(max-width:1100px){
+
+    .hero-service{
+
+        min-height:auto;
+
+        padding:155px 0 100px;
+
+    }
+
+    .hero-grid{
+
+        grid-template-columns:1fr;
+
+        gap:65px;
+
+    }
+
+    .hero-text{
+
+        max-width:800px;
+
+        margin:auto;
+
+    }
+
+    .hero-image{
+
+        min-height:390px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .hero-service{
+
+        padding:135px 0 80px;
+
+    }
+
+    .hero-grid{
+
+        gap:50px;
+
+    }
+
+    .hero-text h1{
+
+        font-size:clamp(2.3rem,10vw,3.2rem);
+
+        letter-spacing:-.8px;
+
+    }
+
+    .hero-text p{
+
+        font-size:1rem;
+
+        line-height:1.8;
+
+    }
+
+    .hero-image{
+
+        min-height:320px;
+
+    }
+
+    .hero-icon{
+
+        width:245px;
+        height:245px;
+
+    }
+
+    .hero-icon::before{
+
+        width:290px;
+        height:290px;
+
+    }
+
+    .hero-icon::after{
+
+        width:210px;
+        height:210px;
+
+    }
+
+    .hero-icon i{
+
+        font-size:85px;
+
+    }
+
+    .hero-image::before{
+
+        width:300px;
+        height:300px;
+
+    }
+
+    .hero-image::after{
+
+        width:340px;
+        height:340px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .hero-service{
+
+        padding:120px 0 70px;
+
+    }
+
+    .hero-text .tag{
+
+        padding:9px 15px;
+
+        font-size:.75rem;
+
+        letter-spacing:1px;
+
+    }
+
+    .hero-text h1{
+
+        font-size:2.15rem;
+
+        line-height:1.15;
+
+    }
+
+    .hero-text p{
+
+        margin-bottom:32px;
+
+    }
+
+    .hero-buttons{
+
+        gap:13px;
+
+    }
+
+    .hero-buttons .btn,
+    .hero-buttons .btn-whatsapp{
+
+        width:100%;
+
+        min-height:54px;
+
+        padding:14px 20px;
+
+    }
+
+    .hero-image{
+
+        min-height:270px;
+
+    }
+
+    .hero-icon{
+
+        width:205px;
+        height:205px;
+
+    }
+
+    .hero-icon::before{
+
+        width:245px;
+        height:245px;
+
+    }
+
+    .hero-icon::after{
+
+        width:172px;
+        height:172px;
+
+    }
+
+    .hero-icon i{
+
+        font-size:68px;
+
+    }
+
+    .hero-image::after{
+
+        width:285px;
+        height:285px;
+
+    }
+
+}
+
+/* ==========================================================
+   WORLDBYTE
+   DESENVOLVIMENTO DE SITES
+   FASE 3 - SOBRE O SERVIÇO
+========================================================== */
+
+/* ==========================================================
+   SEÇÃO SOBRE
+========================================================== */
+
+.about-service{
+
+    position:relative;
+
+    padding:120px 0;
+
+    overflow:hidden;
+
+    background:
+
+    radial-gradient(
+        circle at 12% 18%,
+        rgba(0,207,255,.08),
+        transparent 28%
+    ),
+
+    radial-gradient(
+        circle at 88% 82%,
+        rgba(0,123,255,.06),
+        transparent 32%
+    ),
+
+    linear-gradient(
+        180deg,
+        #07101d 0%,
+        #081321 100%
+    );
+
+}
+
+/* Grade sutil de fundo */
+
+.about-service::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+        rgba(0,207,255,.025) 1px,
+        transparent 1px
+    ),
+
+    linear-gradient(
+        90deg,
+        rgba(0,207,255,.025) 1px,
+        transparent 1px
+    );
+
+    background-size:70px 70px;
+
+    opacity:.45;
+
+    pointer-events:none;
+
+}
+
+/* Luz decorativa */
+
+.about-service::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+    height:420px;
+
+    top:80px;
+    right:-180px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(0,207,255,.1),
+        transparent 68%
+    );
+
+    filter:blur(25px);
+
+    pointer-events:none;
+
+}
+
+/* Mantém o conteúdo acima dos efeitos */
+
+.about-service .container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/* ==========================================================
+   TÍTULO DA SEÇÃO
+========================================================== */
+
+.about-service .section-title{
+
+    max-width:900px;
+
+    margin:0 auto 80px;
+
+}
+
+.about-service .section-title h2{
+
+    font-size:clamp(2.2rem,4vw,3.2rem);
+
+    line-height:1.2;
+
+    letter-spacing:-.8px;
+
+    text-wrap:balance;
+
+}
+
+.about-service .section-title p{
+
+    max-width:780px;
+
+    color:#b9c9da;
+
+    font-size:1.06rem;
+
+    line-height:1.9;
+
+}
+
+/* ==========================================================
+   GRID PRINCIPAL
+========================================================== */
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:minmax(0,1.45fr) minmax(300px,.75fr);
+
+    gap:70px;
+
+    align-items:stretch;
+
+}
+
+/* ==========================================================
+   CONTEÚDO DE TEXTO
+========================================================== */
+
+.about-text{
+
+    position:relative;
+
+    padding:10px 0;
+
+}
+
+.about-text::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-28px;
+    top:0;
+
+    width:3px;
+    height:100%;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+        to bottom,
+        transparent,
+        var(--primary) 18%,
+        var(--primary-dark) 82%,
+        transparent
+    );
+
+    opacity:.65;
+
+}
+
+.about-text h3{
+
+    max-width:680px;
+
+    margin-bottom:28px;
+
+    font-size:clamp(1.7rem,3vw,2.35rem);
+
+    line-height:1.35;
+
+    color:#fff;
+
+    letter-spacing:-.4px;
+
+}
+
+.about-text h3::first-line{
+
+    color:var(--primary);
+
+}
+
+.about-text p{
+
+    max-width:760px;
+
+    margin-bottom:24px;
+
+    color:#c4d2e0;
+
+    font-size:1.04rem;
+
+    line-height:1.95;
+
+}
+
+/* ==========================================================
+   LISTA DE BENEFÍCIOS
+========================================================== */
+
+.about-text ul{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:16px 22px;
+
+    margin-top:38px;
+
+}
+
+.about-text li{
+
+    min-height:62px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin:0;
+
+    padding:15px 18px;
+
+    border-radius:16px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,.045),
+        rgba(255,255,255,.018)
+    );
+
+    border:1px solid rgba(0,207,255,.12);
+
+    color:#e2edf6;
+
+    box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.04);
+
+    transition:
+    transform var(--transition),
+    border-color var(--transition),
+    background var(--transition),
+    box-shadow var(--transition);
+
+}
+
+.about-text li:hover{
+
+    transform:translateX(6px);
+
+    border-color:rgba(0,207,255,.42);
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(0,207,255,.09),
+        rgba(0,123,255,.045)
+    );
+
+    box-shadow:
+    0 12px 28px rgba(0,0,0,.16);
+
+}
+
+.about-text li i{
+
+    width:34px;
+    height:34px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    color:#06111d;
+
+    background:
+    linear-gradient(
+        135deg,
+        #73e7ff,
+        #00bfff
+    );
+
+    font-size:.9rem;
+
+    box-shadow:
+    0 0 0 5px rgba(0,207,255,.07),
+    0 8px 20px rgba(0,191,255,.2);
+
+}
+
+/* ==========================================================
+   CARD LATERAL
+========================================================== */
+
+.about-card{
+
+    min-height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:52px 38px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    position:relative;
+
+    isolation:isolate;
+
+    overflow:hidden;
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.075),
+        rgba(255,255,255,.025)
+    );
+
+    border:1px solid rgba(0,207,255,.2);
+
+    box-shadow:
+
+    0 30px 70px rgba(0,0,0,.28),
+
+    inset 0 1px 0 rgba(255,255,255,.08),
+
+    inset 0 0 45px rgba(0,207,255,.035);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    transition:
+    transform .45s ease,
+    border-color .45s ease,
+    box-shadow .45s ease;
+
+}
+
+/* Luz superior */
+
+.about-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:240px;
+    height:240px;
+
+    top:-120px;
+    right:-100px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(0,207,255,.22),
+        transparent 68%
+    );
+
+    z-index:-2;
+
+    transition:transform .5s ease;
+
+}
+
+/* Brilho inferior */
+
+.about-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    left:-120px;
+    bottom:-130px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(0,123,255,.16),
+        transparent 68%
+    );
+
+    z-index:-2;
+
+    transition:transform .5s ease;
+
+}
+
+.about-card:hover{
+
+    transform:translateY(-12px) scale(1.015);
+
+    border-color:rgba(0,207,255,.55);
+
+    box-shadow:
+
+    0 38px 85px rgba(0,0,0,.34),
+
+    0 0 35px rgba(0,207,255,.12),
+
+    inset 0 1px 0 rgba(255,255,255,.1);
+
+}
+
+.about-card:hover::before{
+
+    transform:translate(-18px,20px) scale(1.12);
+
+}
+
+.about-card:hover::after{
+
+    transform:translate(18px,-20px) scale(1.1);
+
+}
+
+/* ==========================================================
+   ÍCONE DO CARD
+========================================================== */
+
+.about-card i{
+
+    width:110px;
+    height:110px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:32px;
+
+    border-radius:28px;
+
+    color:transparent;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #dffaff,
+        #00cfff 48%,
+        #147cff
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    font-size:70px;
+
+    filter:
+    drop-shadow(
+        0 0 18px rgba(0,207,255,.32)
+    );
+
+    position:relative;
+
+}
+
+.about-card i::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:28px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(0,207,255,.12),
+        rgba(0,123,255,.05)
+    );
+
+    border:1px solid rgba(0,207,255,.16);
+
+    z-index:-1;
+
+}
+
+/* ==========================================================
+   TEXTO DO CARD
+========================================================== */
+
+.about-card h3{
+
+    max-width:340px;
+
+    margin-bottom:20px;
+
+    color:#fff;
+
+    font-size:1.35rem;
+
+    line-height:1.45;
+
+}
+
+.about-card p{
+
+    max-width:360px;
+
+    color:#bdccdb;
+
+    font-size:.98rem;
+
+    line-height:1.85;
+
+}
+
+/* ==========================================================
+   RESPONSIVIDADE
+========================================================== */
+
+@media(max-width:1100px){
+
+    .about-grid{
+
+        grid-template-columns:1fr;
+
+        gap:55px;
+
+    }
+
+    .about-text{
+
+        max-width:900px;
+
+        margin:auto;
+
+    }
+
+    .about-text::before{
+
+        display:none;
+
+    }
+
+    .about-card{
+
+        max-width:650px;
+
+        min-height:420px;
+
+        margin:auto;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .about-service{
+
+        padding:95px 0;
+
+    }
+
+    .about-service .section-title{
+
+        margin-bottom:58px;
+
+    }
+
+    .about-text ul{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .about-card{
+
+        min-height:auto;
+
+        padding:44px 28px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .about-service{
+
+        padding:78px 0;
+
+    }
+
+    .about-service .section-title h2{
+
+        font-size:2rem;
+
+    }
+
+    .about-text h3{
+
+        font-size:1.65rem;
+
+    }
+
+    .about-text p{
+
+        font-size:.98rem;
+
+        line-height:1.8;
+
+    }
+
+    .about-text li{
+
+        min-height:58px;
+
+        padding:14px;
+
+        font-size:.92rem;
+
+    }
+
+    .about-card{
+
+        padding:38px 22px;
+
+        border-radius:24px;
+
+    }
+
+    .about-card i{
+
+        width:92px;
+        height:92px;
+
+        font-size:58px;
+
+    }
+
+    .about-card h3{
+
+        font-size:1.2rem;
+
+    }
+
+}
+
+/* ==========================================================
+   WORLDBYTE
+   DESENVOLVIMENTO DE SITES
+   FASE 4 - TIPOS DE SITES
+========================================================== */
+
+/* ==========================================================
+   SEÇÃO
+========================================================== */
+
+.services-types{
+
+    position:relative;
+
+    padding:120px 0;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(180deg,#050b16 0%,#07101d 100%);
+
+}
+
+.services-types::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at 15% 25%,rgba(0,207,255,.07),transparent 30%),
+    radial-gradient(circle at 85% 75%,rgba(0,123,255,.06),transparent 32%);
+
+    pointer-events:none;
+
+}
+
+.services-types .container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.services-types .cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:34px;
+
+    margin-top:70px;
+
+}
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.services-types .card{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    padding:42px 34px;
+
+    min-height:300px;
+
+    border-radius:26px;
+
+    overflow:hidden;
+
+    isolation:isolate;
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.06),
+        rgba(255,255,255,.02)
+    );
+
+    border:1px solid rgba(0,207,255,.16);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    transition:
+    transform .45s ease,
+    border-color .45s ease,
+    box-shadow .45s ease;
+
+    box-shadow:
+
+    inset 0 1px 0 rgba(255,255,255,.06),
+
+    0 20px 50px rgba(0,0,0,.18);
+
+}
+
+/* brilho superior */
+
+.services-types .card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    top:-110px;
+    right:-110px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+        circle,
+        rgba(0,207,255,.18),
+        transparent 70%
+    );
+
+    transition:.5s;
+
+    z-index:-2;
+
+}
+
+/* barra inferior */
+
+.services-types .card::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:100%;
+    height:4px;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #00cfff,
+        #007bff
+    );
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    transition:.45s;
+
+}
+
+.services-types .card:hover{
+
+    transform:
+    translateY(-12px)
+    rotateX(4deg);
+
+    border-color:rgba(0,207,255,.45);
+
+    box-shadow:
+
+    0 28px 70px rgba(0,0,0,.28),
+
+    0 0 30px rgba(0,207,255,.10);
+
+}
+
+.services-types .card:hover::before{
+
+    transform:scale(1.25);
+
+}
+
+.services-types .card:hover::after{
+
+    transform:scaleX(1);
+
+}
+
+/* ==========================================================
+   ÍCONES
+========================================================== */
+
+.services-types .card i{
+
+    width:82px;
+    height:82px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:28px;
+
+    border-radius:22px;
+
+    font-size:34px;
+
+    color:#fff;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #00d9ff,
+        #007bff
+    );
+
+    box-shadow:
+
+    0 15px 35px rgba(0,191,255,.25);
+
+    transition:.4s;
+
+}
+
+.services-types .card:hover i{
+
+    transform:
+
+    rotate(-8deg)
+    scale(1.08);
+
+    box-shadow:
+
+    0 22px 45px rgba(0,191,255,.35);
+
+}
+
+/* ==========================================================
+   TÍTULO
+========================================================== */
+
+.services-types .card h3{
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:1.35rem;
+
+    margin-bottom:18px;
+
+    line-height:1.4;
+
+    color:#ffffff;
+
+}
+
+/* ==========================================================
+   TEXTO
+========================================================== */
+
+.services-types .card p{
+
+    color:#c8d6e4;
+
+    line-height:1.9;
+
+    font-size:1rem;
+
+    margin-top:auto;
+
+}
+
+/* ==========================================================
+   EFEITO DE MOUSE
+========================================================== */
+
+.services-types .card{
+
+    transform-style:preserve-3d;
+
+}
+
+/* ==========================================================
+   RESPONSIVO
+========================================================== */
+
+@media(max-width:992px){
+
+    .services-types{
+
+        padding:100px 0;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .services-types{
+
+        padding:85px 0;
+
+    }
+
+    .services-types .cards{
+
+        grid-template-columns:1fr;
+
+        gap:24px;
+
+    }
+
+    .services-types .card{
+
+        min-height:auto;
+
+        padding:34px 28px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .services-types{
+
+        padding:70px 0;
+
+    }
+
+    .services-types .card{
+
+        padding:30px 22px;
+
+        border-radius:22px;
+
+    }
+
+    .services-types .card i{
+
+        width:70px;
+        height:70px;
+
+        font-size:28px;
+
+    }
+
+    .services-types .card h3{
+
+        font-size:1.18rem;
+
+    }
+
+    .services-types .card p{
+
+        font-size:.95rem;
+
+    }
+
+}
+
+/* ==========================================================
+   WORLDBYTE
+   DESENVOLVIMENTO DE SITES
+   FASE 5 - NOSSO PROCESSO
+========================================================== */
+
+/* ==========================================================
+   SEÇÃO
+========================================================== */
+
+.process{
+
+    position:relative;
+
+    padding:120px 0;
+
+    overflow:hidden;
+
+    background:
+
+    radial-gradient(
+        circle at 15% 20%,
+        rgba(0,207,255,.07),
+        transparent 28%
+    ),
+
+    radial-gradient(
+        circle at 85% 80%,
+        rgba(0,123,255,.06),
+        transparent 30%
+    ),
+
+    linear-gradient(
+        180deg,
+        #07101d 0%,
+        #081524 100%
+    );
+
+}
+
+.process::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+        rgba(0,207,255,.025) 1px,
+        transparent 1px
+    ),
+
+    linear-gradient(
+        90deg,
+        rgba(0,207,255,.025) 1px,
+        transparent 1px
+    );
+
+    background-size:68px 68px;
+
+    opacity:.45;
+
+    pointer-events:none;
+
+}
+
+.process .container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/* ==========================================================
+   TÍTULO
+========================================================== */
+
+.process .section-title{
+
+    margin-bottom:78px;
+
+}
+
+.process .section-title h2{
+
+    font-size:clamp(2.2rem,4vw,3.15rem);
+
+    line-height:1.2;
+
+}
+
+/* ==========================================================
+   TIMELINE
+========================================================== */
+
+.timeline{
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:repeat(5,minmax(0,1fr));
+
+    gap:28px;
+
+    margin-top:0;
+
+}
+
+/* Linha conectando as etapas */
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:38px;
+    left:8%;
+    right:8%;
+
+    height:2px;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        rgba(0,207,255,.18),
+        rgba(0,207,255,.85),
+        rgba(0,123,255,.85),
+        rgba(0,207,255,.18)
+    );
+
+    box-shadow:
+    0 0 18px rgba(0,207,255,.22);
+
+    z-index:0;
+
+}
+
+/* ==========================================================
+   ETAPA
+========================================================== */
+
+.step{
+
+    position:relative;
+
+    z-index:1;
+
+    min-height:285px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    padding:34px 24px 30px;
+
+    text-align:center;
+
+    border-radius:26px;
+
+    overflow:hidden;
+
+    isolation:isolate;
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.06),
+        rgba(255,255,255,.02)
+    );
+
+    border:1px solid rgba(0,207,255,.15);
+
+    box-shadow:
+
+    0 20px 48px rgba(0,0,0,.2),
+
+    inset 0 1px 0 rgba(255,255,255,.05);
+
+    backdrop-filter:blur(16px);
+
+    -webkit-backdrop-filter:blur(16px);
+
+    transition:
+    transform .45s ease,
+    border-color .45s ease,
+    box-shadow .45s ease;
+
+}
+
+/* Luz decorativa */
+
+.step::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    top:-100px;
+    right:-90px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(0,207,255,.15),
+        transparent 70%
+    );
+
+    z-index:-2;
+
+    transition:transform .5s ease;
+
+}
+
+/* Barra inferior */
+
+.step::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:100%;
+    height:4px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #00cfff,
+        #007bff
+    );
+
+    transform:scaleX(0);
+
+    transform-origin:center;
+
+    transition:transform .4s ease;
+
+}
+
+.step:hover{
+
+    border-color:rgba(0,207,255,.5);
+
+    box-shadow:
+
+    0 30px 70px rgba(0,0,0,.28),
+
+    0 0 32px rgba(0,207,255,.1);
+
+}
+
+.step:hover::before{
+
+    transform:scale(1.25);
+
+}
+
+.step:hover::after{
+
+    transform:scaleX(1);
+
+}
+
+/* ==========================================================
+   NÚMERO DA ETAPA
+========================================================== */
+
+.step span{
+
+    position:relative;
+
+    z-index:2;
+
+    width:76px;
+    height:76px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin:0 auto 28px;
+
+    border-radius:50%;
+
+    color:#fff;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #00d8ff,
+        #0078ff
+    );
+
+    border:5px solid #071321;
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:1.45rem;
+
+    font-weight:700;
+
+    box-shadow:
+
+    0 0 0 1px rgba(0,207,255,.35),
+
+    0 12px 30px rgba(0,123,255,.28),
+
+    0 0 25px rgba(0,207,255,.2);
+
+    transition:
+    transform .4s ease,
+    box-shadow .4s ease;
+
+}
+
+.step:hover span{
+
+    transform:
+    translateY(-3px)
+    scale(1.08)
+    rotate(-5deg);
+
+    box-shadow:
+
+    0 0 0 1px rgba(0,207,255,.6),
+
+    0 18px 38px rgba(0,123,255,.36),
+
+    0 0 35px rgba(0,207,255,.3);
+
+}
+
+/* ==========================================================
+   TEXTO
+========================================================== */
+
+.step h3{
+
+    margin-bottom:16px;
+
+    color:#fff;
+
+    font-size:1.16rem;
+
+    line-height:1.4;
+
+}
+
+.step p{
+
+    color:#c2d0de;
+
+    font-size:.95rem;
+
+    line-height:1.8;
+
+}
+
+/* ==========================================================
+   ETAPAS ALTERNADAS
+========================================================== */
+
+.step:nth-child(even){
+
+    margin-top:38px;
+
+}
+
+.step:nth-child(2)::before,
+.step:nth-child(4)::before{
+
+    right:auto;
+    left:-90px;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(0,123,255,.14),
+        transparent 70%
+    );
+
+}
+
+/* ==========================================================
+   RESPONSIVIDADE
+========================================================== */
+
+@media(max-width:1100px){
+
+    .timeline{
+
+        grid-template-columns:repeat(2,minmax(0,1fr));
+
+        gap:28px;
+
+    }
+
+    .timeline::before{
+
+        display:none;
+
+    }
+
+    .step:nth-child(even){
+
+        margin-top:0;
+
+    }
+
+    .step:last-child{
+
+        grid-column:1 / -1;
+
+        max-width:560px;
+
+        width:100%;
+
+        justify-self:center;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .process{
+
+        padding:95px 0;
+
+    }
+
+    .process .section-title{
+
+        margin-bottom:58px;
+
+    }
+
+    .timeline{
+
+        grid-template-columns:1fr;
+
+        gap:22px;
+
+    }
+
+    .step,
+    .step:last-child{
+
+        max-width:100%;
+
+        grid-column:auto;
+
+    }
+
+    .step{
+
+        min-height:auto;
+
+        align-items:flex-start;
+
+        text-align:left;
+
+        padding:28px 24px;
+
+    }
+
+    .step span{
+
+        margin:0 0 24px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .process{
+
+        padding:75px 0;
+
+    }
+
+    .step{
+
+        padding:25px 20px;
+
+        border-radius:22px;
+
+    }
+
+    .step span{
+
+        width:66px;
+        height:66px;
+
+        font-size:1.25rem;
+
+    }
+
+    .step h3{
+
+        font-size:1.08rem;
+
+    }
+
+    .step p{
+
+        font-size:.93rem;
+
+    }
+
+}
+
+/* ==========================================================
+   WORLDBYTE
+   DESENVOLVIMENTO DE SITES
+   FASE 6 - CTA + FOOTER
+========================================================== */
+
+/* ==========================================================
+   CTA
+========================================================== */
+
+.cta{
+
+    position:relative;
+
+    padding:125px 0;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    background:
+
+    radial-gradient(
+        circle at 50% 30%,
+        rgba(0,207,255,.15),
+        transparent 34%
+    ),
+
+    radial-gradient(
+        circle at 20% 90%,
+        rgba(0,123,255,.10),
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        #050b16 0%,
+        #081525 50%,
+        #0a1b31 100%
+    );
+
+}
+
+/* grade tecnológica */
+
+.cta::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+        rgba(0,207,255,.028) 1px,
+        transparent 1px
+    ),
+
+    linear-gradient(
+        90deg,
+        rgba(0,207,255,.028) 1px,
+        transparent 1px
+    );
+
+    background-size:60px 60px;
+
+    opacity:.5;
+
+    pointer-events:none;
+
+}
+
+/* luz inferior */
+
+.cta::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:560px;
+    height:560px;
+
+    left:50%;
+    bottom:-420px;
+
+    transform:translateX(-50%);
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(0,207,255,.18),
+        rgba(0,123,255,.06) 42%,
+        transparent 72%
+    );
+
+    filter:blur(18px);
+
+    pointer-events:none;
+
+}
+
+/* container da chamada */
+
+.cta .container{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:980px;
+
+    padding:60px 45px;
+
+    border-radius:34px;
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.07),
+        rgba(255,255,255,.02)
+    );
+
+    border:1px solid rgba(0,207,255,.2);
+
+    box-shadow:
+
+    0 35px 85px rgba(0,0,0,.3),
+
+    0 0 40px rgba(0,207,255,.08),
+
+    inset 0 1px 0 rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    -webkit-backdrop-filter:blur(20px);
+
+    overflow:hidden;
+
+}
+
+/* brilho decorativo */
+
+.cta .container::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+    height:260px;
+
+    top:-140px;
+    right:-120px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(0,207,255,.2),
+        transparent 70%
+    );
+
+    pointer-events:none;
+
+}
+
+.cta .container::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:240px;
+    height:240px;
+
+    left:-120px;
+    bottom:-150px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(0,123,255,.16),
+        transparent 70%
+    );
+
+    pointer-events:none;
+
+}
+
+/* título */
+
+.cta h2{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:820px;
+
+    margin:0 auto 26px;
+
+    font-size:clamp(2.1rem,4.6vw,3.25rem);
+
+    line-height:1.22;
+
+    letter-spacing:-.8px;
+
+    text-wrap:balance;
+
+}
+
+/* texto */
+
+.cta p{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:740px;
+
+    margin:0 auto 38px;
+
+    color:#c6d5e4;
+
+    font-size:1.06rem;
+
+    line-height:1.9;
+
+}
+
+/* botão */
+
+.cta .btn{
+
+    position:relative;
+
+    z-index:2;
+
+    min-height:58px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:16px 40px;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #00cfff,
+        #007bff
+    );
+
+    color:#fff;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    letter-spacing:.2px;
+
+    border:1px solid rgba(255,255,255,.16);
+
+    box-shadow:
+
+    0 18px 40px rgba(0,123,255,.28),
+
+    inset 0 1px 0 rgba(255,255,255,.25);
+
+    transition:
+    transform .4s ease,
+    box-shadow .4s ease;
+
+}
+
+.cta .btn:hover{
+
+    transform:translateY(-6px) scale(1.025);
+
+    box-shadow:
+
+    0 28px 55px rgba(0,123,255,.38),
+
+    0 0 28px rgba(0,207,255,.2);
+
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+footer{
+
+    position:relative;
+
+    padding:42px 0;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        180deg,
+        #03050d 0%,
+        #02040a 100%
+    );
+
+    border-top:1px solid rgba(255,255,255,.05);
+
+}
+
+/* brilho superior */
+
+footer::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:50%;
+
+    width:70%;
+    height:1px;
+
+    transform:translateX(-50%);
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(0,207,255,.55),
+        transparent
+    );
+
+    box-shadow:
+    0 0 18px rgba(0,207,255,.22);
+
+}
+
+/* layout */
+
+footer .container{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:30px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/* texto */
+
+footer p{
+
+    margin:0;
+
+    color:#8fa4b9;
+
+    font-size:.92rem;
+
+    line-height:1.7;
+
+    text-align:left;
+
+}
+
+/* redes sociais */
+
+.social{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-top:0;
+
+}
+
+.social a{
+
+    width:46px;
+    height:46px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin:0;
+
+    border-radius:14px;
+
+    color:#b9cada;
+
+    font-size:1.15rem;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.055),
+        rgba(255,255,255,.02)
+    );
+
+    border:1px solid rgba(0,207,255,.12);
+
+    box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.04);
+
+    transition:
+    transform .35s ease,
+    color .35s ease,
+    border-color .35s ease,
+    background .35s ease,
+    box-shadow .35s ease;
+
+}
+
+.social a:hover{
+
+    transform:translateY(-5px);
+
+    color:#fff;
+
+    border-color:rgba(0,207,255,.48);
+
+    background:
+    linear-gradient(
+        135deg,
+        #00cfff,
+        #007bff
+    );
+
+    box-shadow:
+    0 14px 30px rgba(0,123,255,.24);
+
+}
+
+/* ==========================================================
+   BOTÃO VOLTAR AO TOPO
+========================================================== */
+
+.back-top{
+
+    right:24px;
+    bottom:24px;
+
+    width:54px;
+    height:54px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:16px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #00cfff,
+        #007bff
+    );
+
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,.16);
+
+    box-shadow:
+
+    0 18px 40px rgba(0,123,255,.3),
+
+    inset 0 1px 0 rgba(255,255,255,.22);
+
+    transform:translateY(18px);
+
+    transition:
+    opacity .35s ease,
+    visibility .35s ease,
+    transform .35s ease,
+    box-shadow .35s ease;
+
+}
+
+.back-top.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+.back-top:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+
+    0 24px 50px rgba(0,123,255,.4),
+
+    0 0 22px rgba(0,207,255,.18);
+
+}
+
+/* ==========================================================
+   RESPONSIVIDADE
+========================================================== */
+
+@media(max-width:900px){
+
+    .cta{
+
+        padding:100px 0;
+
+    }
+
+    .cta .container{
+
+        width:90%;
+
+        padding:52px 32px;
+
+    }
+
+    footer .container{
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        text-align:center;
+
+    }
+
+    footer p{
+
+        text-align:center;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .cta{
+
+        padding:85px 0;
+
+    }
+
+    .cta .container{
+
+        padding:44px 26px;
+
+        border-radius:28px;
+
+    }
+
+    .cta h2{
+
+        font-size:2rem;
+
+    }
+
+    .cta p{
+
+        font-size:1rem;
+
+        line-height:1.8;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .cta{
+
+        padding:72px 0;
+
+    }
+
+    .cta .container{
+
+        width:92%;
+
+        padding:38px 20px;
+
+        border-radius:24px;
+
+    }
+
+    .cta h2{
+
+        font-size:1.72rem;
+
+    }
+
+    .cta .btn{
+
+        width:100%;
+
+        min-height:54px;
+
+        padding:14px 24px;
+
+    }
+
+    footer{
+
+        padding:35px 0 95px;
+
+    }
+
+    footer p{
+
+        font-size:.86rem;
+
+    }
+
+    .social a{
+
+        width:43px;
+        height:43px;
+
+    }
+
+    .back-top{
+
+        right:18px;
+        bottom:18px;
+
+        width:50px;
+        height:50px;
+
+        border-radius:14px;
+
+    }
+
+}
+
+/* ==========================================================
+   WORLDBYTE
+   DESENVOLVIMENTO DE SITES
+   FASE 7 - RESPONSIVIDADE FINA
+========================================================== */
+
+/* ==========================================================
+   AJUSTES GERAIS
+========================================================== */
+
+body.menu-open{
+
+    overflow:hidden;
+
+}
+
+.hero-text,
+.about-text,
+.about-card,
+.services-types .card,
+.process .step,
+.cta .container{
+
+    min-width:0;
+
+}
+
+.hero-text h1,
+.section-title h2,
+.about-text h3,
+.about-card h3,
+.services-types .card h3,
+.process .step h3,
+.cta h2{
+
+    overflow-wrap:break-word;
+
+}
+
+/* ==========================================================
+   DESKTOP MÉDIO
+========================================================== */
+
+@media(max-width:1200px){
+
+    .container{
+
+        width:92%;
+
+    }
+
+    .hero-grid{
+
+        gap:65px;
+
+    }
+
+    .about-grid{
+
+        gap:50px;
+
+    }
+
+    .services-types .cards{
+
+        gap:28px;
+
+    }
+
+    .timeline{
+
+        gap:22px;
+
+    }
+
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media(max-width:992px){
+
+    .header .container{
+
+        position:relative;
+
+    }
+
+    .hero-service{
+
+        min-height:auto;
+
+    }
+
+    .hero-grid{
+
+        text-align:center;
+
+    }
+
+    .hero-text{
+
+        margin-inline:auto;
+
+    }
+
+    .hero-text .tag{
+
+        justify-content:center;
+
+    }
+
+    .hero-text p{
+
+        margin-left:auto;
+        margin-right:auto;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+    .about-service .section-title,
+    .services-types .section-title,
+    .process .section-title{
+
+        max-width:780px;
+
+        margin-left:auto;
+        margin-right:auto;
+
+    }
+
+    .about-text{
+
+        text-align:left;
+
+    }
+
+    .services-types .cards{
+
+        grid-template-columns:repeat(2,minmax(0,1fr));
+
+    }
+
+}
+
+/* ==========================================================
+   CELULAR E TABLET PEQUENO
+========================================================== */
+
+@media(max-width:768px){
+
+    html{
+
+        scroll-padding-top:85px;
+
+    }
+
+    section[id]{
+
+        scroll-margin-top:85px;
+
+    }
+
+    .container{
+
+        width:92%;
+
+    }
+
+    /* HEADER */
+
+    .header{
+
+        padding:14px 0;
+
+    }
+
+    .header.scroll{
+
+        padding:11px 0;
+
+    }
+
+    .header .container{
+
+        gap:16px;
+
+    }
+
+    .logo{
+
+        font-size:1.35rem;
+
+    }
+
+    .menu-mobile{
+
+        flex-shrink:0;
+
+    }
+
+    .navbar{
+
+        max-height:calc(100vh - 100px);
+
+        overflow-y:auto;
+
+        overscroll-behavior:contain;
+
+    }
+
+    .navbar a{
+
+        font-size:1rem;
+
+    }
+
+    /* HERO */
+
+    .hero-service{
+
+        padding-top:125px;
+
+    }
+
+    .hero-grid{
+
+        text-align:center;
+
+    }
+
+    .hero-text h1{
+
+        max-width:620px;
+
+        margin-left:auto;
+        margin-right:auto;
+
+    }
+
+    .hero-text p{
+
+        max-width:600px;
+
+    }
+
+    .hero-image{
+
+        margin-top:5px;
+
+    }
+
+    /* TÍTULOS */
+
+    .section-title{
+
+        margin-bottom:52px;
+
+    }
+
+    .section-title h2{
+
+        font-size:clamp(1.9rem,8vw,2.35rem);
+
+    }
+
+    .section-title p{
+
+        font-size:.98rem;
+
+        line-height:1.75;
+
+    }
+
+    /* SOBRE */
+
+    .about-grid{
+
+        gap:42px;
+
+    }
+
+    .about-text h3{
+
+        font-size:1.75rem;
+
+    }
+
+    .about-text p{
+
+        line-height:1.8;
+
+    }
+
+    .about-text ul{
+
+        margin-top:30px;
+
+    }
+
+    /* CARDS */
+
+    .services-types .cards{
+
+        grid-template-columns:1fr;
+
+        margin-top:50px;
+
+    }
+
+    .services-types .card{
+
+        max-width:620px;
+
+        width:100%;
+
+        margin-inline:auto;
+
+    }
+
+    /* PROCESSO */
+
+    .timeline{
+
+        margin-top:0;
+
+    }
+
+    .step{
+
+        width:100%;
+
+    }
+
+    /* CTA */
+
+    .cta .container{
+
+        width:92%;
+
+    }
+
+    /* FOOTER */
+
+    footer .container{
+
+        gap:22px;
+
+    }
+
+}
+
+/* ==========================================================
+   CELULARES
+========================================================== */
+
+@media(max-width:576px){
+
+    .container{
+
+        width:92%;
+
+    }
+
+    /* HEADER */
+
+    .navbar{
+
+        left:4%;
+
+        width:92%;
+
+        border-radius:18px;
+
+        padding:10px;
+
+    }
+
+    .navbar a{
+
+        padding:14px;
+
+    }
+
+    /* HERO */
+
+    .hero-service{
+
+        padding:115px 0 65px;
+
+    }
+
+    .hero-text .tag{
+
+        max-width:100%;
+
+        white-space:normal;
+
+        text-align:center;
+
+    }
+
+    .hero-text h1{
+
+        margin-bottom:22px;
+
+    }
+
+    .hero-text p{
+
+        margin-bottom:30px;
+
+    }
+
+    .hero-buttons{
+
+        width:100%;
+
+    }
+
+    .hero-buttons .btn,
+    .hero-buttons .btn-whatsapp{
+
+        width:100%;
+
+    }
+
+    .hero-image{
+
+        min-height:250px;
+
+    }
+
+    /* SOBRE */
+
+    .about-service{
+
+        padding:72px 0;
+
+    }
+
+    .about-text li{
+
+        align-items:flex-start;
+
+    }
+
+    .about-text li i{
+
+        margin-top:2px;
+
+    }
+
+    .about-card{
+
+        width:100%;
+
+    }
+
+    /* TIPOS */
+
+    .services-types{
+
+        padding:72px 0;
+
+    }
+
+    .services-types .card{
+
+        min-height:auto;
+
+    }
+
+    /* PROCESSO */
+
+    .process{
+
+        padding:72px 0;
+
+    }
+
+    .step{
+
+        text-align:left;
+
+    }
+
+    /* CTA */
+
+    .cta{
+
+        padding:68px 0;
+
+    }
+
+    .cta .container{
+
+        padding:36px 20px;
+
+    }
+
+    .cta h2{
+
+        font-size:1.65rem;
+
+    }
+
+    .cta p{
+
+        font-size:.95rem;
+
+    }
+
+}
+
+/* ==========================================================
+   CELULARES PEQUENOS
+========================================================== */
+
+@media(max-width:380px){
+
+    .logo{
+
+        font-size:1.18rem;
+
+    }
+
+    .menu-mobile{
+
+        width:42px;
+        height:42px;
+
+        font-size:1.2rem;
+
+    }
+
+    .hero-text h1{
+
+        font-size:1.9rem;
+
+    }
+
+    .hero-text p{
+
+        font-size:.94rem;
+
+    }
+
+    .hero-icon{
+
+        width:185px;
+        height:185px;
+
+    }
+
+    .hero-icon::before{
+
+        width:220px;
+        height:220px;
+
+    }
+
+    .hero-icon::after{
+
+        width:156px;
+        height:156px;
+
+    }
+
+    .hero-icon i{
+
+        font-size:60px;
+
+    }
+
+    .section-title h2{
+
+        font-size:1.72rem;
+
+    }
+
+    .about-text h3{
+
+        font-size:1.5rem;
+
+    }
+
+    .about-text li{
+
+        padding:13px;
+
+    }
+
+    .services-types .card,
+    .step{
+
+        padding:24px 18px;
+
+    }
+
+    .cta h2{
+
+        font-size:1.5rem;
+
+    }
+
+}
+
+/* ==========================================================
+   DISPOSITIVOS SEM HOVER
+========================================================== */
+
+@media(hover:none){
+
+    .about-card:hover,
+    .services-types .card:hover,
+    .step:hover,
+    .cta .btn:hover,
+    .hero-buttons .btn:hover,
+    .hero-buttons .btn-whatsapp:hover,
+    .social a:hover,
+    .back-top:hover{
+
+        transform:none;
+
+    }
+
+    .services-types .card:hover i,
+    .step:hover span{
+
+        transform:none;
+
+    }
+
+}
+
+/* ==========================================================
+   ORIENTAÇÃO HORIZONTAL EM CELULAR
+========================================================== */
+
+@media(
+    max-width:900px
+) and (
+    orientation:landscape
+){
+
+    .hero-service{
+
+        min-height:auto;
+
+        padding-top:110px;
+
+    }
+
+    .hero-image{
+
+        min-height:260px;
+
+    }
+
+    .navbar{
+
+        max-height:75vh;
+
+    }
+
+}
+
+/* ==========================================================
+   WORLDBYTE
+   DESENVOLVIMENTO DE SITES
+   FASE 8 - EFEITOS PREMIUM
+========================================================== */
+
+/* ==========================================================
+   SELEÇÃO DE TEXTO
+========================================================== */
+
+::selection{
+
+    background:rgba(0,207,255,.28);
+
+    color:#fff;
+
+}
+
+/* ==========================================================
+   BARRA DE ROLAGEM
+========================================================== */
+
+::-webkit-scrollbar{
+
+    width:11px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#040914;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    border:3px solid #040914;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+        180deg,
+        #00cfff,
+        #007bff
+    );
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:
+    linear-gradient(
+        180deg,
+        #57e6ff,
+        #168dff
+    );
+
+}
+
+html{
+
+    scrollbar-width:thin;
+
+    scrollbar-color:#008dff #040914;
+
+}
+
+/* ==========================================================
+   CURSOR LUMINOSO DECORATIVO
+========================================================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:430px;
+    height:430px;
+
+    left:var(--mouse-x,50%);
+    top:var(--mouse-y,50%);
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(0,207,255,.07),
+        rgba(0,123,255,.025) 38%,
+        transparent 68%
+    );
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    opacity:.8;
+
+    transition:
+    left .08s linear,
+    top .08s linear;
+
+}
+
+/* ==========================================================
+   EFEITO DE REVELAÇÃO
+========================================================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(38px);
+
+    filter:blur(5px);
+
+    transition:
+
+    opacity .85s ease,
+
+    transform .85s cubic-bezier(.2,.7,.2,1),
+
+    filter .85s ease;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    filter:blur(0);
+
+}
+
+/* variações */
+
+.reveal-left{
+
+    opacity:0;
+
+    transform:translateX(-45px);
+
+    filter:blur(5px);
+
+    transition:
+
+    opacity .85s ease,
+
+    transform .85s cubic-bezier(.2,.7,.2,1),
+
+    filter .85s ease;
+
+}
+
+.reveal-right{
+
+    opacity:0;
+
+    transform:translateX(45px);
+
+    filter:blur(5px);
+
+    transition:
+
+    opacity .85s ease,
+
+    transform .85s cubic-bezier(.2,.7,.2,1),
+
+    filter .85s ease;
+
+}
+
+.reveal-left.active,
+.reveal-right.active{
+
+    opacity:1;
+
+    transform:translateX(0);
+
+    filter:blur(0);
+
+}
+
+/* ==========================================================
+   BRILHO NOS CARDS
+========================================================== */
+
+.services-types .card,
+.about-card,
+.process .step{
+
+    --glow-x:50%;
+    --glow-y:50%;
+
+}
+
+.services-types .card::marker,
+.about-card::marker,
+.process .step::marker{
+
+    display:none;
+
+}
+
+.services-types .card{
+
+    background:
+
+    radial-gradient(
+        circle at var(--glow-x) var(--glow-y),
+        rgba(0,207,255,.11),
+        transparent 34%
+    ),
+
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.06),
+        rgba(255,255,255,.02)
+    );
+
+}
+
+.about-card{
+
+    background:
+
+    radial-gradient(
+        circle at var(--glow-x) var(--glow-y),
+        rgba(0,207,255,.12),
+        transparent 35%
+    ),
+
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.075),
+        rgba(255,255,255,.025)
+    );
+
+}
+
+.process .step{
+
+    background:
+
+    radial-gradient(
+        circle at var(--glow-x) var(--glow-y),
+        rgba(0,207,255,.10),
+        transparent 34%
+    ),
+
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.06),
+        rgba(255,255,255,.02)
+    );
+
+}
+
+/* ==========================================================
+   BORDA ANIMADA DOS CARDS
+========================================================== */
+
+.services-types .card,
+.about-card,
+.process .step,
+.cta .container{
+
+    position:relative;
+
+}
+
+.services-types .card .card-border,
+.about-card .card-border,
+.process .step .card-border{
+
+    display:none;
+
+}
+
+.services-types .card:hover,
+.about-card:hover,
+.process .step:hover{
+
+    animation:premiumBorderGlow 2.4s ease-in-out infinite;
+
+}
+
+/* ==========================================================
+   BOTÕES COM BRILHO
+========================================================== */
+
+.btn,
+.btn-whatsapp,
+.cta .btn{
+
+    isolation:isolate;
+
+}
+
+.btn::before,
+.btn-whatsapp::before,
+.cta .btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-50%;
+    left:-130%;
+
+    width:70%;
+    height:200%;
+
+    transform:rotate(25deg);
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.42),
+        transparent
+    );
+
+    z-index:-1;
+
+    transition:left .7s ease;
+
+}
+
+.btn:hover::before,
+.btn-whatsapp:hover::before,
+.cta .btn:hover::before{
+
+    left:145%;
+
+}
+
+/* ==========================================================
+   ANIMAÇÃO DOS ÍCONES
+========================================================== */
+
+.services-types .card i,
+.about-card i{
+
+    animation:iconFloat 4.5s ease-in-out infinite;
+
+}
+
+.services-types .card:nth-child(2) i{
+
+    animation-delay:.4s;
+
+}
+
+.services-types .card:nth-child(3) i{
+
+    animation-delay:.8s;
+
+}
+
+.services-types .card:nth-child(4) i{
+
+    animation-delay:1.2s;
+
+}
+
+.services-types .card:nth-child(5) i{
+
+    animation-delay:1.6s;
+
+}
+
+.services-types .card:nth-child(6) i{
+
+    animation-delay:2s;
+
+}
+
+/* ==========================================================
+   TIMELINE ANIMADA
+========================================================== */
+
+.timeline::before{
+
+    background-size:220% 100%;
+
+    animation:timelineFlow 5s linear infinite;
+
+}
+
+.step span{
+
+    overflow:hidden;
+
+}
+
+.step span::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-35%;
+
+    background:
+    conic-gradient(
+        from 0deg,
+        transparent,
+        rgba(255,255,255,.45),
+        transparent 28%
+    );
+
+    animation:stepRotate 4.8s linear infinite;
+
+}
+
+.step span::after{
+
+    content:attr(data-step);
+
+    position:absolute;
+
+    inset:5px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(
+        135deg,
+        #00d8ff,
+        #0078ff
+    );
+
+}
+
+/*
+Caso seus spans já tenham o número escrito no HTML,
+o pseudo-elemento acima pode ser removido.
+*/
+
+/* ==========================================================
+   HERO COM PARTÍCULAS VISUAIS
+========================================================== */
+
+.hero-service .container::before,
+.hero-service .container::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:#00cfff;
+
+    box-shadow:
+
+    70px 40px rgba(0,207,255,.35),
+
+    160px 110px rgba(0,123,255,.28),
+
+    290px 50px rgba(255,255,255,.20),
+
+    420px 150px rgba(0,207,255,.28),
+
+    580px 80px rgba(0,123,255,.25),
+
+    720px 190px rgba(255,255,255,.16),
+
+    860px 70px rgba(0,207,255,.22);
+
+    opacity:.6;
+
+    pointer-events:none;
+
+}
+
+.hero-service .container::before{
+
+    top:16%;
+    left:5%;
+
+    animation:particlesMove 13s ease-in-out infinite alternate;
+
+}
+
+.hero-service .container::after{
+
+    right:9%;
+    bottom:18%;
+
+    transform:scale(.7);
+
+    animation:particlesMoveReverse 15s ease-in-out infinite alternate;
+
+}
+
+/* ==========================================================
+   TEXTO COM GRADIENTE ANIMADO
+========================================================== */
+
+.hero-text h1 span,
+.cta h2 span{
+
+    background:
+    linear-gradient(
+        90deg,
+        #00cfff,
+        #ffffff,
+        #007bff,
+        #00cfff
+    );
+
+    background-size:300% 100%;
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+    animation:textGradient 6s linear infinite;
+
+}
+
+/* ==========================================================
+   LINHA DECORATIVA NOS TÍTULOS
+========================================================== */
+
+.section-title h2{
+
+    position:relative;
+
+}
+
+.section-title h2::after{
+
+    content:"";
+
+    display:block;
+
+    width:78px;
+    height:4px;
+
+    margin:22px auto 0;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        #00cfff,
+        #007bff,
+        transparent
+    );
+
+    background-size:200% 100%;
+
+    box-shadow:
+    0 0 18px rgba(0,207,255,.28);
+
+    animation:titleLineFlow 3.5s linear infinite;
+
+}
+
+/* ==========================================================
+   LOGO COM BRILHO
+========================================================== */
+
+.logo{
+
+    position:relative;
+
+}
+
+.logo::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-5px;
+
+    width:100%;
+    height:2px;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        #00cfff,
+        transparent
+    );
+
+    transform:scaleX(0);
+
+    transition:transform .4s ease;
+
+}
+
+.logo:hover::after{
+
+    transform:scaleX(1);
+
+}
+
+/* ==========================================================
+   KEYFRAMES
+========================================================== */
+
+@keyframes premiumBorderGlow{
+
+    0%,
+    100%{
+
+        box-shadow:
+
+        0 24px 58px rgba(0,0,0,.24),
+
+        0 0 18px rgba(0,207,255,.08);
+
+    }
+
+    50%{
+
+        box-shadow:
+
+        0 30px 72px rgba(0,0,0,.3),
+
+        0 0 38px rgba(0,207,255,.18);
+
+    }
+
+}
+
+@keyframes iconFloat{
+
+    0%,
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+}
+
+@keyframes timelineFlow{
+
+    from{
+
+        background-position:200% center;
+
+    }
+
+    to{
+
+        background-position:-20% center;
+
+    }
+
+}
+
+@keyframes stepRotate{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+@keyframes particlesMove{
+
+    0%{
+
+        transform:translate(0,0);
+
+    }
+
+    100%{
+
+        transform:translate(35px,-28px);
+
+    }
+
+}
+
+@keyframes particlesMoveReverse{
+
+    0%{
+
+        transform:scale(.7) translate(0,0);
+
+    }
+
+    100%{
+
+        transform:scale(.7) translate(-38px,30px);
+
+    }
+
+}
+
+@keyframes textGradient{
+
+    from{
+
+        background-position:0% center;
+
+    }
+
+    to{
+
+        background-position:300% center;
+
+    }
+
+}
+
+@keyframes titleLineFlow{
+
+    from{
+
+        background-position:200% center;
+
+    }
+
+    to{
+
+        background-position:-20% center;
+
+    }
+
+}
+
+/* ==========================================================
+   REDUÇÃO DE MOVIMENTO
+========================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+    body::before,
+    .timeline::before,
+    .step span::before,
+    .hero-service .container::before,
+    .hero-service .container::after,
+    .hero-text h1 span,
+    .cta h2 span,
+    .section-title h2::after,
+    .services-types .card i,
+    .about-card i{
+
+        animation:none !important;
+
+    }
+
+    .reveal,
+    .reveal-left,
+    .reveal-right{
+
+        opacity:1;
+
+        transform:none;
+
+        filter:none;
+
+    }
+
+}
+
+/* ==========================================================
+   DESATIVAR EFEITOS PESADOS NO CELULAR
+========================================================== */
+
+@media(max-width:768px){
+
+    body::before{
+
+        display:none;
+
+    }
+
+    .hero-service .container::before,
+    .hero-service .container::after{
+
+        opacity:.25;
+
+        transform:scale(.55);
+
+    }
+
+    .services-types .card:hover,
+    .about-card:hover,
+    .process .step:hover{
+
+        animation:none;
+
+    }
+
+}
+
+/* ==========================================================
+   WORLDBYTE
+   DESENVOLVIMENTO DE SITES
+   FASE 9 - REVISÃO FINAL E OTIMIZAÇÃO
+========================================================== */
+
+/* ==========================================================
+   RESET FINAL DE CONSISTÊNCIA
+========================================================== */
+
+*,
+*::before,
+*::after{
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    -webkit-font-smoothing:antialiased;
+
+    text-rendering:optimizeLegibility;
+
+}
+
+/* ==========================================================
+   IMAGENS E ÍCONES
+========================================================== */
+
+img,
+svg{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+img{
+
+    height:auto;
+
+}
+
+i{
+
+    line-height:1;
+
+}
+
+/* ==========================================================
+   LINKS E BOTÕES
+========================================================== */
+
+a,
+button{
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+button,
+input,
+textarea,
+select{
+
+    font:inherit;
+
+}
+
+button{
+
+    border:0;
+
+}
+
+.btn,
+.btn-whatsapp,
+.cta .btn,
+.menu-mobile,
+.back-top,
+.social a{
+
+    cursor:pointer;
+
+}
+
+/* ==========================================================
+   FOCO ACESSÍVEL
+========================================================== */
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.btn-whatsapp:focus-visible,
+.menu-mobile:focus-visible,
+.back-top:focus-visible,
+.social a:focus-visible{
+
+    outline:3px solid rgba(0,207,255,.75);
+
+    outline-offset:4px;
+
+    border-radius:8px;
+
+}
+
+/* ==========================================================
+   MELHORIA DE LEITURA
+========================================================== */
+
+p{
+
+    max-width:75ch;
+
+}
+
+.hero-text p,
+.section-title p,
+.about-card p,
+.services-types .card p,
+.step p,
+.cta p,
+footer p{
+
+    text-wrap:pretty;
+
+}
+
+.hero-text h1,
+.section-title h2,
+.about-text h3,
+.about-card h3,
+.services-types .card h3,
+.step h3,
+.cta h2{
+
+    text-wrap:balance;
+
+}
+
+/* ==========================================================
+   HEADER FINAL
+========================================================== */
+
+.header{
+
+    will-change:background,box-shadow,padding;
+
+}
+
+.header.scroll{
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.26),
+    0 1px 0 rgba(0,207,255,.08);
+
+}
+
+.navbar a{
+
+    position:relative;
+
+}
+
+.navbar a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    bottom:-7px;
+
+    width:0;
+    height:2px;
+
+    transform:translateX(-50%);
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #00cfff,
+        #007bff
+    );
+
+    transition:width .35s ease;
+
+}
+
+.navbar a:hover::after,
+.navbar a.active::after{
+
+    width:100%;
+
+}
+
+/* ==========================================================
+   EVITAR CONFLITOS DE TRANSFORM
+========================================================== */
+
+.hero-image{
+
+    will-change:transform;
+
+}
+
+.services-types .card,
+.about-card,
+.step{
+
+    will-change:transform;
+
+}
+
+@media(hover:hover){
+
+    .services-types .card:hover,
+    .about-card:hover,
+    .step:hover{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+/* ==========================================================
+   AJUSTE DE PERFORMANCE
+========================================================== */
+
+.about-service,
+.services-types,
+.process,
+.cta{
+
+    content-visibility:auto;
+
+    contain-intrinsic-size:800px;
+
+}
+
+.hero-service{
+
+    contain:layout paint;
+
+}
+
+/* ==========================================================
+   EVITAR ANIMAÇÕES ANTES DO CARREGAMENTO
+========================================================== */
+
+body:not(.page-loaded) .hero-icon,
+body:not(.page-loaded) .services-types .card i,
+body:not(.page-loaded) .about-card i,
+body:not(.page-loaded) .timeline::before{
+
+    animation-play-state:paused;
+
+}
+
+body.page-loaded .hero-icon,
+body.page-loaded .services-types .card i,
+body.page-loaded .about-card i,
+body.page-loaded .timeline::before{
+
+    animation-play-state:running;
+
+}
+
+/* ==========================================================
+   ESTADO DO MENU MOBILE
+========================================================== */
+
+@media(max-width:768px){
+
+    .navbar{
+
+        visibility:hidden;
+
+        opacity:0;
+
+        transform:
+        translateY(-16px)
+        scale(.98);
+
+        pointer-events:none;
+
+        transition:
+        opacity .3s ease,
+        transform .3s ease,
+        visibility .3s ease;
+
+    }
+
+    .navbar.active{
+
+        visibility:visible;
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(1);
+
+        pointer-events:auto;
+
+    }
+
+    .navbar a::after{
+
+        display:none;
+
+    }
+
+    .navbar a{
+
+        border-radius:12px;
+
+        transition:
+        background .3s ease,
+        color .3s ease,
+        padding-left .3s ease;
+
+    }
+
+    .navbar a:hover,
+    .navbar a.active{
+
+        padding-left:20px;
+
+        background:rgba(0,207,255,.08);
+
+        color:#fff;
+
+    }
+
+}
+
+/* ==========================================================
+   AJUSTE DOS CARDS
+========================================================== */
+
+.services-types .card,
+.about-card,
+.step{
+
+    backface-visibility:hidden;
+
+    transform:translateZ(0);
+
+}
+
+.services-types .card p,
+.about-card p,
+.step p{
+
+    margin-bottom:0;
+
+}
+
+/* ==========================================================
+   AJUSTE DA TIMELINE
+========================================================== */
+
+.step span{
+
+    isolation:isolate;
+
+}
+
+.step span::before{
+
+    z-index:-1;
+
+}
+
+.timeline{
+
+    isolation:isolate;
+
+}
+
+/* ==========================================================
+   AJUSTE DOS BOTÕES
+========================================================== */
+
+.btn,
+.btn-whatsapp,
+.cta .btn{
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    user-select:none;
+
+}
+
+.btn:active,
+.btn-whatsapp:active,
+.cta .btn:active{
+
+    transform:translateY(-1px) scale(.98);
+
+}
+
+/* ==========================================================
+   FOOTER FINAL
+========================================================== */
+
+footer a{
+
+    color:inherit;
+
+}
+
+footer p a{
+
+    color:#00cfff;
+
+    transition:color .3s ease;
+
+}
+
+footer p a:hover{
+
+    color:#fff;
+
+}
+
+/* ==========================================================
+   BACK TO TOP FINAL
+========================================================== */
+
+.back-top{
+
+    z-index:999;
+
+}
+
+.back-top:active{
+
+    transform:scale(.94);
+
+}
+
+/* ==========================================================
+   TELAS MUITO GRANDES
+========================================================== */
+
+@media(min-width:1500px){
+
+    .container{
+
+        max-width:1320px;
+
+    }
+
+    .hero-grid{
+
+        gap:100px;
+
+    }
+
+    .hero-text h1{
+
+        font-size:4.2rem;
+
+    }
+
+    .hero-icon{
+
+        transform:scale(1.08);
+
+    }
+
+}
+
+/* ==========================================================
+   TELAS MUITO PEQUENAS
+========================================================== */
+
+@media(max-width:340px){
+
+    .container{
+
+        width:94%;
+
+    }
+
+    .hero-text h1{
+
+        font-size:1.72rem;
+
+    }
+
+    .hero-text .tag{
+
+        font-size:.72rem;
+
+    }
+
+    .hero-buttons .btn,
+    .hero-buttons .btn-whatsapp{
+
+        padding-left:16px;
+        padding-right:16px;
+
+        font-size:.9rem;
+
+    }
+
+    .about-card,
+    .services-types .card,
+    .step,
+    .cta .container{
+
+        border-radius:20px;
+
+    }
+
+}
+
+/* ==========================================================
+   IMPRESSÃO
+========================================================== */
+
+@media print{
+
+    .header,
+    .menu-mobile,
+    .back-top,
+    .hero-buttons,
+    .cta .btn,
+    .social{
+
+        display:none !important;
+
+    }
+
+    body{
+
+        background:#fff;
+
+        color:#000;
+
+    }
+
+    section,
+    .hero-service,
+    .about-service,
+    .services-types,
+    .process,
+    .cta,
+    footer{
+
+        background:#fff !important;
+
+        color:#000 !important;
+
+        padding:30px 0;
+
+    }
+
+    h1,
+    h2,
+    h3,
+    p{
+
+        color:#000 !important;
+
+    }
+
+    .about-card,
+    .services-types .card,
+    .step,
+    .cta .container{
+
+        box-shadow:none;
+
+        border:1px solid #ccc;
+
+        background:#fff;
+
+    }
+
+}
+
+/* ==========================================================
+   WORLDBYTE
+   DESENVOLVIMENTO DE SITES
+   FASE 10 - SEO, CONVERSÃO E WHATSAPP
+========================================================== */
+
+/* ==========================================================
+   BOTÃO FLUTUANTE DO WHATSAPP
+========================================================== */
+
+.whatsapp-floating{
+
+    position:fixed;
+
+    right:24px;
+    bottom:92px;
+
+    z-index:998;
+
+    min-height:58px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:11px;
+
+    padding:14px 21px;
+
+    border-radius:50px;
+
+    color:#fff;
+
+    font-size:.94rem;
+
+    font-weight:700;
+
+    background:
+    linear-gradient(
+        135deg,
+        #25d366,
+        #128c4a
+    );
+
+    border:1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+
+    0 18px 40px rgba(18,140,74,.34),
+
+    inset 0 1px 0 rgba(255,255,255,.25);
+
+    overflow:hidden;
+
+    isolation:isolate;
+
+    animation:
+    whatsappEntrance .7s ease both,
+    whatsappPulse 3s ease-in-out 1.2s infinite;
+
+    transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+
+}
+
+/* brilho passando pelo botão */
+
+.whatsapp-floating::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-60%;
+    left:-100%;
+
+    width:60%;
+    height:220%;
+
+    transform:rotate(25deg);
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.42),
+        transparent
+    );
+
+    z-index:-1;
+
+    transition:left .7s ease;
+
+}
+
+.whatsapp-floating:hover{
+
+    transform:translateY(-6px) scale(1.025);
+
+    box-shadow:
+
+    0 26px 55px rgba(18,140,74,.45),
+
+    0 0 28px rgba(37,211,102,.22);
+
+}
+
+.whatsapp-floating:hover::before{
+
+    left:150%;
+
+}
+
+.whatsapp-floating i{
+
+    font-size:1.55rem;
+
+}
+
+.whatsapp-floating span{
+
+    white-space:nowrap;
+
+}
+
+/* ==========================================================
+   ANIMAÇÕES
+========================================================== */
+
+@keyframes whatsappEntrance{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px) scale(.92);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+@keyframes whatsappPulse{
+
+    0%,
+    100%{
+
+        box-shadow:
+
+        0 18px 40px rgba(18,140,74,.34),
+
+        0 0 0 0 rgba(37,211,102,.25);
+
+    }
+
+    50%{
+
+        box-shadow:
+
+        0 18px 40px rgba(18,140,74,.4),
+
+        0 0 0 12px rgba(37,211,102,0);
+
+    }
+
+}
+
+/* ==========================================================
+   ACESSIBILIDADE
+========================================================== */
+
+.whatsapp-floating:focus-visible{
+
+    outline:3px solid rgba(255,255,255,.9);
+
+    outline-offset:4px;
+
+}
+
+/* ==========================================================
+   RESPONSIVIDADE
+========================================================== */
+
+@media(max-width:768px){
+
+    .whatsapp-floating{
+
+        right:18px;
+        bottom:82px;
+
+        width:55px;
+        height:55px;
+
+        min-height:55px;
+
+        padding:0;
+
+        border-radius:50%;
+
+    }
+
+    .whatsapp-floating span{
+
+        display:none;
+
+    }
+
+    .whatsapp-floating i{
+
+        font-size:1.6rem;
+
+    }
+
+}
+
+@media(max-width:380px){
+
+    .whatsapp-floating{
+
+        right:14px;
+        bottom:76px;
+
+        width:51px;
+        height:51px;
+
+        min-height:51px;
+
+    }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    .whatsapp-floating{
+
+        animation:none;
+
+    }
+
+}
+
+/* ==================================================
+   COMPLEMENTOS DO FOOTER
+================================================== */
+
+.footer-column{
+
+    min-width:0;
+
+}
+
+.footer-column h3{
+
+    position:relative;
+
+    color:#fff;
+
+    font-family:'Orbitron',sans-serif;
+
+}
+
+.footer-column h3::after{
+
+    content:"";
+
+    display:block;
+
+    width:42px;
+    height:3px;
+
+    margin-top:10px;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--primary-light)
+    );
+
+}
+
+.footer-contact li{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:11px;
+
+    color:var(--gray);
+
+    line-height:1.6;
+
+}
+
+.footer-contact li i{
+
+    width:18px;
+
+    flex-shrink:0;
+
+    margin-top:4px;
+
+    color:var(--primary-light);
+
+}
+
+.footer-contact li span{
+
+    color:var(--gray);
+
+}
+
+.footer-contact a:hover{
+
+    padding-left:0;
+
+}
+
+.footer-legal{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:24px;
+
+}
+
+.footer-legal a{
+
+    color:#8b95a5;
+
+    font-size:.92rem;
+
+}
+
+.footer-legal a:hover{
+
+    padding-left:0;
+
+    color:var(--primary-light);
+
+}
+
+/* ==================================================
+   RESPONSIVIDADE DO FOOTER
+================================================== */
+
+@media(max-width:1100px){
+
+    .footer-grid{
+
+        grid-template-columns:2fr 1fr 1fr;
+
+        gap:45px;
+
+    }
+
+    .footer-column:last-child{
+
+        grid-column:1 / -1;
+
+    }
+
+    .footer-contact{
+
+        display:grid;
+
+        grid-template-columns:repeat(3,minmax(0,1fr));
+
+        gap:20px;
+
+    }
+
+}
+
+@media(max-width:850px){
+
+    .footer{
+
+        padding:75px 0 28px;
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:repeat(2,minmax(0,1fr));
+
+        gap:45px 35px;
+
+    }
+
+    .footer-about{
+
+        grid-column:1 / -1;
+
+        max-width:650px;
+
+    }
+
+    .footer-column:last-child{
+
+        grid-column:1 / -1;
+
+    }
+
+    .footer-contact{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .footer{
+
+        padding:60px 0 25px;
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:1fr;
+
+        gap:38px;
+
+    }
+
+    .footer-about,
+    .footer-column:last-child{
+
+        grid-column:auto;
+
+    }
+
+    .footer-logo{
+
+        font-size:1.7rem;
+
+        margin-bottom:18px;
+
+    }
+
+    .footer h3{
+
+        margin-bottom:20px;
+
+    }
+
+    .footer-social{
+
+        margin-top:24px;
+
+    }
+
+    .footer-social a{
+
+        width:46px;
+        height:46px;
+
+        border-radius:13px;
+
+    }
+
+    .footer-bottom{
+
+        margin-top:50px;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    .footer-legal{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:12px;
+
+    }
+
+}
+
+@media(max-width:380px){
+
+    .footer-social{
+
+        gap:10px;
+
+    }
+
+    .footer-social a{
+
+        width:43px;
+        height:43px;
+
+    }
+
+}
