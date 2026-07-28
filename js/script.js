@@ -301,3 +301,290 @@ pageImages.forEach(image => {
     }
 
 });
+
+/*======================================
+BOTÃO VOLTAR AO TOPO
+======================================*/
+
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 350){
+
+        backToTop.classList.add("show");
+
+    }else{
+
+        backToTop.classList.remove("show");
+
+    }
+
+});
+
+backToTop.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const form = document.getElementById("contactForm");
+    const telefoneInput = document.getElementById("telefone");
+    const formStatus = document.getElementById("formStatus");
+
+    if (!form) {
+        return;
+    }
+
+    /*
+     * Máscara do telefone:
+     * (31) 99999-9999
+     */
+    telefoneInput.addEventListener("input", function () {
+
+        let valor = telefoneInput.value.replace(/\D/g, "");
+
+        valor = valor.substring(0, 11);
+
+        if (valor.length > 10) {
+
+            valor = valor.replace(
+                /^(\d{2})(\d{5})(\d{4})$/,
+                "($1) $2-$3"
+            );
+
+        } else if (valor.length > 6) {
+
+            valor = valor.replace(
+                /^(\d{2})(\d{4})(\d{0,4})$/,
+                "($1) $2-$3"
+            );
+
+        } else if (valor.length > 2) {
+
+            valor = valor.replace(
+                /^(\d{2})(\d+)/,
+                "($1) $2"
+            );
+
+        } else if (valor.length > 0) {
+
+            valor = valor.replace(
+                /^(\d*)/,
+                "($1"
+            );
+
+        }
+
+        telefoneInput.value = valor;
+
+    });
+
+    form.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        formStatus.textContent = "";
+        formStatus.classList.remove("success", "error");
+
+        if (!form.checkValidity()) {
+
+            form.reportValidity();
+
+            formStatus.textContent =
+                "Preencha corretamente todos os campos obrigatórios.";
+
+            formStatus.classList.add("error");
+
+            return;
+
+        }
+
+        const nome = document
+            .getElementById("nome")
+            .value
+            .trim();
+
+        const empresa = document
+            .getElementById("empresa")
+            .value
+            .trim();
+
+        const email = document
+            .getElementById("email")
+            .value
+            .trim();
+
+        const telefone = document
+            .getElementById("telefone")
+            .value
+            .trim();
+
+        const servico = document
+            .getElementById("servico")
+            .value;
+
+        const mensagem = document
+            .getElementById("mensagem")
+            .value
+            .trim();
+
+        const privacidade = document
+            .getElementById("privacidade");
+
+        if (!privacidade.checked) {
+
+            formStatus.textContent =
+                "Você precisa aceitar a Política de Privacidade.";
+
+            formStatus.classList.add("error");
+
+            privacidade.focus();
+
+            return;
+
+        }
+
+        const empresaTexto = empresa || "Não informado";
+
+        const textoWhatsApp =
+`Olá, WorldByte! Gostaria de solicitar um orçamento.
+
+*NOVA SOLICITAÇÃO PELO SITE*
+
+*Nome:* ${nome}
+*Empresa:* ${empresaTexto}
+*E-mail:* ${email}
+*Telefone:* ${telefone}
+*Serviço de interesse:* ${servico}
+
+*Descrição do projeto:*
+${mensagem}
+
+Mensagem enviada pelo site da WorldByte.`;
+
+        /*
+         * Número no formato:
+         * código do país + DDD + telefone
+         *
+         * Brasil: 55
+         * DDD: 31
+         * Número: 982283299
+         */
+        const numeroWhatsApp = "5531982283299";
+
+        const urlWhatsApp =
+            `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(textoWhatsApp)}`;
+
+        formStatus.textContent =
+            "Abrindo o WhatsApp com sua solicitação...";
+
+        formStatus.classList.add("success");
+
+        const novaJanela = window.open(
+            urlWhatsApp,
+            "_blank",
+            "noopener,noreferrer"
+        );
+
+        /*
+         * Caso o navegador bloqueie a nova guia,
+         * abre o WhatsApp na mesma página.
+         */
+      
+
+    });
+
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const closeLightbox = document.getElementById("closeLightbox");
+    const viewButtons = document.querySelectorAll(".view-image");
+
+    if (
+        !lightbox ||
+        !lightboxImage ||
+        !closeLightbox
+    ) {
+        return;
+    }
+
+    function abrirLightbox(imagem, textoAlternativo) {
+
+        lightboxImage.src = imagem;
+        lightboxImage.alt = textoAlternativo || "Projeto ampliado";
+
+        lightbox.classList.add("active");
+        lightbox.setAttribute("aria-hidden", "false");
+
+        document.body.classList.add("lightbox-open");
+
+        closeLightbox.focus();
+
+    }
+
+    function fecharLightbox() {
+
+        lightbox.classList.remove("active");
+        lightbox.setAttribute("aria-hidden", "true");
+
+        document.body.classList.remove("lightbox-open");
+
+        setTimeout(function () {
+
+            lightboxImage.src = "";
+            lightboxImage.alt = "";
+
+        }, 300);
+
+    }
+
+    viewButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            abrirLightbox(
+                button.dataset.image,
+                button.dataset.alt
+            );
+
+        });
+
+    });
+
+    closeLightbox.addEventListener("click", fecharLightbox);
+
+    lightbox.addEventListener("click", function (event) {
+
+        if (
+            event.target === lightbox ||
+            event.target.classList.contains("lightbox-content")
+        ) {
+            fecharLightbox();
+        }
+
+    });
+
+    document.addEventListener("keydown", function (event) {
+
+        if (
+            event.key === "Escape" &&
+            lightbox.classList.contains("active")
+        ) {
+            fecharLightbox();
+        }
+
+    });
+
+});

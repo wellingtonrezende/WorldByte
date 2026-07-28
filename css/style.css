@@ -9,7 +9,7 @@ RESET
 
 *{
     margin:0;
-    padding:0;
+    padding:10;
     box-sizing:border-box;
 }
 
@@ -225,6 +225,35 @@ SECTION TITLE
     text-align:center;
 
     margin-bottom:70px;
+
+}
+
+.section-title h2 span {
+
+   background:linear-gradient(
+        90deg,
+        
+        #0099FF
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+}
+
+.section-title p{
+
+    max-width:700px;
+
+    margin:20px auto 0;
+
+    font-size:clamp(1.1rem, 1.8vw, 1.4rem);
+
+    line-height:1.8;
+
+    color:#b8c7d9;
 
 }
 
@@ -669,6 +698,8 @@ HERO
 
     overflow:hidden;
 
+    
+
 }
 
 .hero::before{
@@ -711,11 +742,15 @@ HERO
 
     align-items:center;
 
+    
+
 }
 
 .hero-text{
 
     margin-top:70px;
+
+  
 
 }
 
@@ -1756,46 +1791,360 @@ RESPONSIVO
 
 }
 
-/*==================================================
-FASE 5
-PORTFÓLIO / PROJETOS
-==================================================*/
+/*======================================
+PORTFÓLIO
+======================================*/
 
-/*==============================
-SEÇÃO
-==============================*/
-
-.portfolio{
+.portfolio-card{
 
     position:relative;
 
-    background:var(--dark2);
-
     overflow:hidden;
 
-    padding:120px 0;
+    min-height:320px;
+
+    border-radius:20px;
+
+    background:#081426;
+
+    cursor:pointer;
 
 }
 
-.portfolio::before{
+.portfolio-card img{
 
-    content:"";
+    width:100%;
+    height:100%;
+
+    min-height:320px;
+
+    display:block;
+
+    object-fit:cover;
+
+    transition:
+        transform .6s ease,
+        filter .6s ease;
+
+}
+
+.portfolio-card:hover img{
+
+    transform:scale(1.07);
+
+    filter:brightness(.55);
+
+}
+
+.portfolio-overlay{
 
     position:absolute;
 
-    width:800px;
+    inset:0;
 
-    height:800px;
+    display:flex;
 
-    left:-300px;
+    justify-content:center;
+    align-items:flex-end;
 
-    top:-250px;
+    padding:30px;
+
+    background:linear-gradient(
+        to top,
+        rgba(2,8,23,.95),
+        rgba(2,8,23,.20),
+        transparent
+    );
+
+    opacity:0;
+
+    transition:.4s ease;
+
+}
+
+.portfolio-card:hover .portfolio-overlay{
+
+    opacity:1;
+
+}
+
+.portfolio-info{
+
+    width:100%;
+
+    transform:translateY(25px);
+
+    transition:.4s ease;
+
+}
+
+.portfolio-card:hover .portfolio-info{
+
+    transform:translateY(0);
+
+}
+
+.portfolio-info span{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#00cfff;
+
+    font-size:.9rem;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+.portfolio-info h3{
+
+    margin-bottom:18px;
+
+    color:#ffffff;
+
+    font-size:1.5rem;
+
+}
+
+.view-image{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
+    padding:13px 22px;
+
+    border:0;
+
+    border-radius:999px;
+
+    color:#ffffff;
+
+    background:linear-gradient(
+        135deg,
+        #00cfff,
+        #006eff
+    );
+
+    font-size:.95rem;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+}
+
+.view-image:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(0,174,255,.35);
+
+}
+
+/*======================================
+LIGHTBOX
+======================================*/
+
+.lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:40px;
+
+    background:rgba(0,4,12,.94);
+
+    backdrop-filter:blur(10px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s ease;
+
+    z-index:99999;
+
+}
+
+.lightbox.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.lightbox-content{
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+}
+
+.lightbox-content img{
+
+    max-width:95%;
+    max-height:90vh;
+
+    object-fit:contain;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.65);
+
+    transform:scale(.92);
+
+    transition:.35s ease;
+
+}
+
+.lightbox.active .lightbox-content img{
+
+    transform:scale(1);
+
+}
+
+.close-lightbox{
+
+    position:absolute;
+
+    top:24px;
+    right:30px;
+
+    width:50px;
+    height:50px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    border:1px solid rgba(255,255,255,.2);
 
     border-radius:50%;
 
-    background:rgba(0,174,239,.08);
+    color:#ffffff;
 
-    filter:blur(180px);
+    background:rgba(255,255,255,.08);
+
+    font-size:1.4rem;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+    z-index:2;
+
+}
+
+.close-lightbox:hover{
+
+    background:#00cfff;
+
+    transform:rotate(90deg);
+
+}
+
+body.lightbox-open{
+
+    overflow:hidden;
+
+}
+
+/*======================================
+CELULAR E TABLET
+======================================*/
+
+@media(max-width:768px){
+
+    .portfolio-card{
+
+        min-height:260px;
+
+    }
+
+    .portfolio-card img{
+
+        min-height:260px;
+
+    }
+
+    .portfolio-overlay{
+
+        opacity:1;
+
+        padding:20px;
+
+        background:linear-gradient(
+            to top,
+            rgba(2,8,23,.95),
+            rgba(2,8,23,.18),
+            transparent
+        );
+
+    }
+
+    .portfolio-info{
+
+        transform:none;
+
+    }
+
+    .portfolio-info h3{
+
+        font-size:1.25rem;
+
+    }
+
+    .lightbox{
+
+        padding:15px;
+
+    }
+
+    .lightbox-content img{
+
+        max-width:100%;
+        max-height:85vh;
+
+        border-radius:12px;
+
+    }
+
+    .close-lightbox{
+
+        top:15px;
+        right:15px;
+
+        width:44px;
+        height:44px;
+
+    }
 
 }
 
@@ -1825,35 +2174,33 @@ CARD
 
     position:relative;
 
+    height:30px;
+
     overflow:hidden;
 
-    border-radius:26px;
+    border-radius:20px;
 
-    background:rgba(255,255,255,.05);
+    cursor:pointer;
 
-    border:1px solid rgba(255,255,255,.08);
-
-    backdrop-filter:blur(18px);
-
-    transition:.45s;
-
-    box-shadow:0 20px 45px rgba(0,0,0,.25);
+    box-shadow:0 15px 40px rgba(0,0,0,.18);
 
 }
-
-/*==============================
-IMAGEM
-==============================*/
 
 .portfolio-card img{
 
     width:100%;
 
-    height:320px;
+    height:auto;
 
-    object-fit:cover;
+    display:block;
 
-    transition:.6s;
+    transition:transform 8s linear;
+
+}
+
+.portfolio-card:hover img{
+
+    transform:translateY(calc(-100% + 380px));
 
 }
 
@@ -3669,7 +4016,7 @@ LOGO
 
     font-weight:700;
 
-    margin-bottom:25px;
+    margin-bottom:0px;
 
 }
 
@@ -4839,5 +5186,136 @@ COMPLEMENTO DA FASE 9
         transition-duration:.01ms !important;
 
     }
+
+}
+
+/*======================================
+BOTÃO VOLTAR AO TOPO
+======================================*/
+
+.back-to-top{
+
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    width:58px;
+    height:58px;
+
+    border:none;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:1.25rem;
+
+    color:#fff;
+
+    background:linear-gradient(
+        135deg,
+        #00cfff,
+        #007bff
+    );
+
+    box-shadow:
+        0 15px 35px rgba(0,123,255,.35);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(20px);
+
+    transition:
+        .35s;
+
+    z-index:9999;
+
+}
+
+.back-to-top:hover{
+
+    transform:
+        translateY(-6px)
+        scale(1.05);
+
+    box-shadow:
+        0 20px 40px rgba(0,123,255,.45);
+
+}
+
+.back-to-top.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+/* Responsivo */
+
+@media(max-width:768px){
+
+    .back-to-top{
+
+        width:52px;
+        height:52px;
+
+        right:18px;
+        bottom:18px;
+
+        font-size:1.1rem;
+
+    }
+
+}
+
+.hero-text p{
+
+    font-size:clamp(1.1rem, 1.8vw, 1.35rem);
+
+    line-height:1.8;
+
+    color:#d7e3f4;
+
+    max-width:700px;
+
+    margin:30px 0;
+
+}
+
+.form-status{
+
+    min-height:24px;
+
+    margin-top:16px;
+
+    font-size:0.95rem;
+
+    font-weight:600;
+
+    line-height:1.5;
+
+}
+
+.form-status.success{
+
+    color:#25d366;
+
+}
+
+.form-status.error{
+
+    color:#ff5c5c;
 
 }

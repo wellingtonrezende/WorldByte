@@ -7274,266 +7274,281 @@ footer p a:hover{
 }
 
 /* ==================================================
-   COMPLEMENTOS DO FOOTER
+   FOOTER IGUAL AO DA INDEX
 ================================================== */
 
-.footer-column{
-
-    min-width:0;
-
-}
-
-.footer-column h3{
+.footer{
 
     position:relative;
 
-    color:#fff;
-
-    font-family:'Orbitron',sans-serif;
-
-}
-
-.footer-column h3::after{
-
-    content:"";
-
-    display:block;
-
-    width:42px;
-    height:3px;
-
-    margin-top:10px;
-
-    border-radius:20px;
-
-    background:linear-gradient(
-        90deg,
-        var(--primary),
-        var(--primary-light)
-    );
-
-}
-
-.footer-contact li{
+    min-height:250px;
 
     display:flex;
 
     align-items:flex-start;
 
-    gap:11px;
+    justify-content:center;
 
-    color:var(--gray);
+    padding:14px 20px 36px;
 
-    line-height:1.6;
+    overflow:hidden;
 
-}
+    background:
+    linear-gradient(
+        100deg,
+        #050914 0%,
+        #07111f 55%,
+        #081626 100%
+    );
 
-.footer-contact li i{
+    border-top:1px solid rgba(255,255,255,.05);
 
-    width:18px;
-
-    flex-shrink:0;
-
-    margin-top:4px;
-
-    color:var(--primary-light);
-
-}
-
-.footer-contact li span{
-
-    color:var(--gray);
+    border-right:1px solid rgba(0,207,255,.45);
 
 }
 
-.footer-contact a:hover{
+.footer-content{
 
-    padding-left:0;
+    width:100%;
 
-}
+    max-width:1025px;
 
-.footer-legal{
+    margin:0 auto;
 
     display:flex;
 
-    align-items:center;
+    flex-direction:column;
 
-    gap:24px;
-
-}
-
-.footer-legal a{
-
-    color:#8b95a5;
-
-    font-size:.92rem;
-
-}
-
-.footer-legal a:hover{
-
-    padding-left:0;
-
-    color:var(--primary-light);
+    align-items:flex-start;
 
 }
 
 /* ==================================================
-   RESPONSIVIDADE DO FOOTER
+   LOGO
+================================================== */
+
+.footer-logo{
+
+    margin-bottom:30px;
+
+}
+
+.footer-logo h2{
+
+    margin:0 0 2px;
+
+    color:#fff;
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:2.45rem;
+
+    font-weight:700;
+
+    line-height:1.15;
+
+    letter-spacing:-1px;
+
+}
+
+.footer-logo h2 span{
+
+    color:#18cfff;
+
+}
+
+.footer-logo p{
+
+    margin:0;
+
+    color:#9fb5cd;
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:1.35rem;
+
+    font-weight:600;
+
+    line-height:1.4;
+
+}
+
+/* ==================================================
+   COPYRIGHT
+================================================== */
+
+.footer-bottom{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:3px;
+
+}
+
+.footer-bottom p{
+
+    margin:0;
+
+    color:#fff;
+
+    font-family:Arial,sans-serif;
+
+    font-size:.82rem;
+
+    line-height:1.45;
+
+}
+
+/* ==================================================
+   WHATSAPP FLUTUANTE
+================================================== */
+
+.whatsapp-floating{
+
+    position:fixed;
+
+    left:16px;
+    bottom:14px;
+
+    z-index:999;
+
+    width:53px;
+    height:53px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:0;
+
+    border-radius:50%;
+
+    color:#fff;
+
+    background:#25d366;
+
+    border:none;
+
+    box-shadow:
+    0 10px 25px rgba(37,211,102,.28);
+
+    transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+
+}
+
+.whatsapp-floating:hover{
+
+    transform:translateY(-5px) scale(1.04);
+
+    box-shadow:
+    0 16px 32px rgba(37,211,102,.4);
+
+}
+
+.whatsapp-floating i{
+
+    font-size:1.55rem;
+
+}
+
+.whatsapp-floating span{
+
+    display:none;
+
+}
+
+/* ==================================================
+   RESPONSIVIDADE
 ================================================== */
 
 @media(max-width:1100px){
 
-    .footer-grid{
+    .footer-content{
 
-        grid-template-columns:2fr 1fr 1fr;
-
-        gap:45px;
-
-    }
-
-    .footer-column:last-child{
-
-        grid-column:1 / -1;
-
-    }
-
-    .footer-contact{
-
-        display:grid;
-
-        grid-template-columns:repeat(3,minmax(0,1fr));
-
-        gap:20px;
+        max-width:90%;
 
     }
 
 }
 
-@media(max-width:850px){
+@media(max-width:768px){
 
     .footer{
 
-        padding:75px 0 28px;
+        min-height:230px;
+
+        padding:25px 22px 40px;
 
     }
 
-    .footer-grid{
+    .footer-content{
 
-        grid-template-columns:repeat(2,minmax(0,1fr));
-
-        gap:45px 35px;
+        max-width:100%;
 
     }
 
-    .footer-about{
+    .footer-logo h2{
 
-        grid-column:1 / -1;
-
-        max-width:650px;
+        font-size:2rem;
 
     }
 
-    .footer-column:last-child{
+    .footer-logo p{
 
-        grid-column:1 / -1;
+        font-size:1.05rem;
 
     }
 
-    .footer-contact{
+    .footer-bottom p{
 
-        grid-template-columns:1fr;
+        font-size:.78rem;
 
     }
 
 }
 
-@media(max-width:600px){
+@media(max-width:480px){
 
     .footer{
 
-        padding:60px 0 25px;
+        min-height:220px;
 
-    }
-
-    .footer-grid{
-
-        grid-template-columns:1fr;
-
-        gap:38px;
-
-    }
-
-    .footer-about,
-    .footer-column:last-child{
-
-        grid-column:auto;
+        padding:28px 20px 70px;
 
     }
 
     .footer-logo{
 
+        margin-bottom:26px;
+
+    }
+
+    .footer-logo h2{
+
         font-size:1.7rem;
 
-        margin-bottom:18px;
+    }
+
+    .footer-logo p{
+
+        font-size:.88rem;
 
     }
 
-    .footer h3{
+    .whatsapp-floating{
 
-        margin-bottom:20px;
+        left:14px;
+        bottom:14px;
 
-    }
-
-    .footer-social{
-
-        margin-top:24px;
-
-    }
-
-    .footer-social a{
-
-        width:46px;
-        height:46px;
-
-        border-radius:13px;
-
-    }
-
-    .footer-bottom{
-
-        margin-top:50px;
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-    }
-
-    .footer-legal{
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-        gap:12px;
-
-    }
-
-}
-
-@media(max-width:380px){
-
-    .footer-social{
-
-        gap:10px;
-
-    }
-
-    .footer-social a{
-
-        width:43px;
-        height:43px;
+        width:50px;
+        height:50px;
 
     }
 
